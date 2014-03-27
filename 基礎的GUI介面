@@ -1,0 +1,19 @@
+import java.awt.event.*;
+import javax.swing.JFame;
+import javax.swing.border.TitleBorder;
+
+public class TestCalculate extends JFrame implements ActionListener{
+	pulic TestCalculate(){
+		
+	}
+	
+	
+	public static void main( String[] args ){
+		TestCalculate frame = new TestCalculate();
+		frame.setSize(400,600);
+		frame.setTitle(" 小算盤");
+		frame.setLocationRelative(null);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisiable(true);
+	}
+}
