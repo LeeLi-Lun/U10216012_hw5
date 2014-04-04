@@ -4,6 +4,9 @@ import javax.swing.border.TitleBorder;
 
 public class TestCalculate extends JFrame implements ActionListener{
 	
+	private JButton jbtDecimal= new JButton(".");
+	private JButton jbtAnswer = new JButton("=");
+	
 	private JButton jbtAdd = new JButton("+");
 	private JButton jbtMinus = new JButton("-");
 	private JButton jbtMultiply = new JButton("x");
@@ -37,6 +40,9 @@ public class TestCalculate extends JFrame implements ActionListener{
 			p1.add(Number[i]);
 		}
 		
+		p1.add(jbtDecimal);
+		p1.add(jbtAnswer);
+		
 		p1.add(jbtAdd);
 		p1.add(jbtMinus);
 		p1.add(jbtMultiply);
@@ -61,7 +67,7 @@ public class TestCalculate extends JFrame implements ActionListener{
 		add(p2, BorderLayout.NORTH);
 	}
 	
-	for(int i = 0; i <= 9; i++)
+		for(int i = 0; i <= 9; i++)
 			Number[i].addActionListener(actionPerformed(ActionEvent e));
 		
 		jbtAdd.addActionListener(actionPerformed(ActionEvent e);
@@ -84,6 +90,28 @@ public class TestCalculate extends JFrame implements ActionListener{
 	
 	@Override
 	public void actionPerformed(ActionEvent e){
+		switch(e.getSource()){
+		
+		for(int i = 0; i <= 9; i++)
+			Number[i].addActionListener(actionPerformed(ActionEvent e));
+		
+		case jbtAdd: 
+		case jbtMinus:
+		case jbtMultiply:
+		case jbtDivide:
+		
+		case jbtLog:
+		case jbtLn:
+		case jbtDel:
+		case jbtPi:
+		
+		case jbtSin:
+		case jbtCos:
+		case jbtSec:
+		case jbtCsc:
+		case jbtTan:
+		case jbtCot:
+		}
 		
 	}
 	
