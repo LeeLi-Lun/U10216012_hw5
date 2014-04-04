@@ -33,7 +33,13 @@ public class TestCalculate extends JFrame implements ActionListener{
 		for(int i = 0; i <= 9; i++){
 			Number[i] = new JButton(""+ i);
 			p1.add(Number[i]);
-			}
+		}
+		
+		p1.add(jbtAdd);
+		p1.add(jbtMinus);
+		p1.add(jbtMultiply);
+		p1.add(jbtDivide);
+			
 		p1.add(jbtLog);
 		p1.add(jbtLn);
 		p1.add(jbtDel);
