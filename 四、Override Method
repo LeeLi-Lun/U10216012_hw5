@@ -1,6 +1,6 @@
+import java.awt.*;
 import java.awt.event.*;
-import javax.swing.JFame;
-import javax.swing.border.TitleBorder;
+import javax.swing.*;
 
 public class TestCalculate extends JFrame {
 	
@@ -31,7 +31,7 @@ public class TestCalculate extends JFrame {
 	
 	private JTextField jtActionDisplay = new JTextField();
 	
-	pulic TestCalculate(){
+	public TestCalculate(){
 		JPanel p1 = new JPanel();
 		p1.setLayout(new GridLayout(7,4));
 		
@@ -93,23 +93,32 @@ public class TestCalculate extends JFrame {
 		jbtCot.addActionListener(Action);
 	}
 	
-}
+
 	
 	private class ButtonListener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e){
-			switch(e.getSource()){
-		
-			case Number[0]: jtActionDisplay.setText(jtActionDisplay.getText() + "0"); break;
-			case Number[1]: jtActionDisplay.setText(jtActionDisplay.getText() + "1"); break;
-			case Number[2]: jtActionDisplay.setText(jtActionDisplay.getText() + "2"); break;
-			case Number[3]: jtActionDisplay.setText(jtActionDisplay.getText() + "3"); break;
-			case Number[4]: jtActionDisplay.setText(jtActionDisplay.getText() + "4"); break;
-			case Number[5]: jtActionDisplay.setText(jtActionDisplay.getText() + "5"); break;
-			case Number[6]: jtActionDisplay.setText(jtActionDisplay.getText() + "6"); break;
-			case Number[7]: jtActionDisplay.setText(jtActionDisplay.getText() + "7"); break;
-			case Number[8]: jtActionDisplay.setText(jtActionDisplay.getText() + "8"); break;
-			case Number[9]: jtActionDisplay.setText(jtActionDisplay.getText() + "9"); break;
+	
+			if(e.getSource = Number[0] )
+				jtActionDisplay.setText(jtActionDisplay.getText() + "0"); break;
+			if(e.getSource = Number[1] )
+				jtActionDisplay.setText(jtActionDisplay.getText() + "1"); break;
+			if(e.getSource = Number[2] )
+				jtActionDisplay.setText(jtActionDisplay.getText() + "2"); break;
+			if(e.getSource = Number[3] )
+				jtActionDisplay.setText(jtActionDisplay.getText() + "3"); break;
+			if(e.getSource = Number[4] )
+				jtActionDisplay.setText(jtActionDisplay.getText() + "4"); break;
+			if(e.getSource = Number[5] )
+				jtActionDisplay.setText(jtActionDisplay.getText() + "5"); break;
+			if(e.getSource = Number[6] )
+				jtActionDisplay.setText(jtActionDisplay.getText() + "6"); break;
+			if(e.getSource = Number[7] )
+				jtActionDisplay.setText(jtActionDisplay.getText() + "7"); break;
+			if(e.getSource = Number[8] )
+				jtActionDisplay.setText(jtActionDisplay.getText() + "8"); break;
+			if(e.getSource = Number[9] )
+				jtActionDisplay.setText(jtActionDisplay.getText() + "9"); break;
 				
 			case jbtDecimal: jtActionDisplay.setText(jtActionDisplay.getText() + "."); break;
 			case jbtAnswer:
@@ -130,6 +139,7 @@ public class TestCalculate extends JFrame {
 			case jbtCsc: jtActionDisplay.setText("csc" + jtActionDisplay.getText() ); break;
 			case jbtTan: jtActionDisplay.setText("tan" + jtActionDisplay.getText() ); break;
 			case jbtCot:  jtActionDisplay.setText("cot" + jtActionDisplay.getText() ); break;
+			
 		}
 	}
 	
@@ -139,7 +149,7 @@ public class TestCalculate extends JFrame {
 		frame.setTitle(" ");
 		frame.setLocationRelative(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisiable(true);
+		frame.setVisible(true);
 	}
 	
 
