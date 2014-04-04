@@ -100,45 +100,57 @@ public class TestCalculate extends JFrame {
 		public void actionPerformed(ActionEvent e){
 	
 			if(e.getSource = Number[0] )
-				jtActionDisplay.setText(jtActionDisplay.getText() + "0"); break;
+				jtActionDisplay.setText(jtActionDisplay.getText() + "0"); 
 			if(e.getSource = Number[1] )
-				jtActionDisplay.setText(jtActionDisplay.getText() + "1"); break;
+				jtActionDisplay.setText(jtActionDisplay.getText() + "1"); 
 			if(e.getSource = Number[2] )
-				jtActionDisplay.setText(jtActionDisplay.getText() + "2"); break;
+				jtActionDisplay.setText(jtActionDisplay.getText() + "2"); 
 			if(e.getSource = Number[3] )
-				jtActionDisplay.setText(jtActionDisplay.getText() + "3"); break;
+				jtActionDisplay.setText(jtActionDisplay.getText() + "3"); 
 			if(e.getSource = Number[4] )
-				jtActionDisplay.setText(jtActionDisplay.getText() + "4"); break;
+				jtActionDisplay.setText(jtActionDisplay.getText() + "4"); 
 			if(e.getSource = Number[5] )
-				jtActionDisplay.setText(jtActionDisplay.getText() + "5"); break;
+				jtActionDisplay.setText(jtActionDisplay.getText() + "5");
 			if(e.getSource = Number[6] )
-				jtActionDisplay.setText(jtActionDisplay.getText() + "6"); break;
+				jtActionDisplay.setText(jtActionDisplay.getText() + "6"); 
 			if(e.getSource = Number[7] )
-				jtActionDisplay.setText(jtActionDisplay.getText() + "7"); break;
+				jtActionDisplay.setText(jtActionDisplay.getText() + "7"); 
 			if(e.getSource = Number[8] )
-				jtActionDisplay.setText(jtActionDisplay.getText() + "8"); break;
+				jtActionDisplay.setText(jtActionDisplay.getText() + "8"); 
 			if(e.getSource = Number[9] )
-				jtActionDisplay.setText(jtActionDisplay.getText() + "9"); break;
-				
-			case jbtDecimal: jtActionDisplay.setText(jtActionDisplay.getText() + "."); break;
-			case jbtAnswer:
-			
-			case jbtAdd: jtActionDisplay.setText(jtActionDisplay.getText() + "+"); break;
-			case jbtMinus: jtActionDisplay.setText(jtActionDisplay.getText() + "-"); break;
-			case jbtMultiply: jtActionDisplay.setText(jtActionDisplay.getText() + "x"); break;
-			case jbtDivide: jtActionDisplay.setText(jtActionDisplay.getText() + "÷"); break;
-				
-			case jbtLog: jtActionDisplay.setText("log" + jtActionDisplay.getText()); break;
-			case jbtLn: jtActionDisplay.setText(jtActionDisplay.getText()); break;
-			case jbtDel: jtActionDisplay.setText(""); break;
-			case jbtPi: jtActionDisplay.setText(jtActionDisplay.getText() + "π"); break;
-				
-			case jbtSin: jtActionDisplay.setText("sin" + jtActionDisplay.getText() ); break;
-			case jbtCos: jtActionDisplay.setText("cos" + jtActionDisplay.getText() ); break;
-			case jbtSec: jtActionDisplay.setText("sec" + jtActionDisplay.getText() ); break;
-			case jbtCsc: jtActionDisplay.setText("csc" + jtActionDisplay.getText() ); break;
-			case jbtTan: jtActionDisplay.setText("tan" + jtActionDisplay.getText() ); break;
-			case jbtCot:  jtActionDisplay.setText("cot" + jtActionDisplay.getText() ); break;
+				jtActionDisplay.setText(jtActionDisplay.getText() + "9"); 
+			if(e.getSource = jbtDecimal )
+				jtActionDisplay.setText(jtActionDisplay.getText() + ".");
+			if(e.getSource = jbtDecimal )
+				jbtAnswer
+			if(e.getSource = jbtAdd  )
+				jtActionDisplay.setText(jtActionDisplay.getText() + "+"); 
+			if(e.getSource = jbtMinus )
+				jtActionDisplay.setText(jtActionDisplay.getText() + "-"); 
+			if(e.getSource = jbtMultiply )
+				jtActionDisplay.setText(jtActionDisplay.getText() + "x"); 
+			if(e.getSource = jbtDivide )
+				jtActionDisplay.setText(jtActionDisplay.getText() + "÷"); 
+			if(e.getSource = jbtLog )
+				jtActionDisplay.setText("log" + jtActionDisplay.getText()); 
+			if(e.getSource = jbtLn  )
+				jtActionDisplay.setText(jtActionDisplay.getText()); 
+			if(e.getSource = jbtDel )
+				jtActionDisplay.setText(""); 
+			if(e.getSource = jbtPi )
+				jtActionDisplay.setText(jtActionDisplay.getText() + "π");
+			if(e.getSource = jbtSin )	
+				jtActionDisplay.setText("sin" + jtActionDisplay.getText() ); 
+			if(e.getSource = jbtCos )
+				jtActionDisplay.setText("cos" + jtActionDisplay.getText() ); 
+			if(e.getSource = jbtSec )
+				jtActionDisplay.setText("sec" + jtActionDisplay.getText() ); 
+			if(e.getSource = jbtCsc )
+				jtActionDisplay.setText("csc" + jtActionDisplay.getText() );
+			if(e.getSource = jbtTan )
+				jtActionDisplay.setText("tan" + jtActionDisplay.getText() ); 
+			if(e.getSource = jbtCot )
+				jtActionDisplay.setText("cot" + jtActionDisplay.getText() ); 
 			
 		}
 	}
