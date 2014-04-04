@@ -125,6 +125,7 @@ public class TestCalculate extends JFrame {
 		}
 	}
 	
+	
 	public static void main( String[] args ){
 		TestCalculate frame = new TestCalculate();
 		frame.setSize(400,600);
