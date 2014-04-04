@@ -29,39 +29,50 @@ public class TestCalculate extends JFrame {
 	
 	private JButton[] Number = new JButton[10]; //for 0~9 button
 	
-	private JTextField jtActionDisplay = new JTextField();
+	private JTextField jtActionDisplay = new JTextField("                          ");
 	
 	public TestCalculate(){
+		for(int i = 9; i >= 0; i--){
+				Number[i] = new JButton(""+ i);
+			}
+			
 		JPanel p1 = new JPanel();
 		p1.setLayout(new GridLayout(7,4));
-		
-		for(int i = 0; i <= 9; i++){
-			Number[i] = new JButton(""+ i);
-			p1.add(Number[i]);
-		}
-		
-		p1.add(jbtDecimal);
-		p1.add(jbtAnswer);
-		p1.add(jbtAdd);
-		p1.add(jbtMinus);
-		p1.add(jbtMultiply);
-		p1.add(jbtDivide);
-		p1.add(jbtLog);
-		p1.add(jbtLn);
-		p1.add(jbtDel);
-		p1.add(jbtPi);
+	
 		p1.add(jbtSin);
 		p1.add(jbtCos);
 		p1.add(jbtSec);
+		p1.add(jbtLog);
 		p1.add(jbtCsc);
 		p1.add(jbtTan);
 		p1.add(jbtCot);
+		p1.add(jbtLn);
+		p1.add(jbtRemainder);
+		p1.add(jbtQuotient);
+		p1.add(jbtPi);
+		p1.add(jbtDel);
+		p1.add(Number[9]);
+		p1.add(Number[8]);
+		p1.add(Number[7]);
+		p1.add(jbtAdd);
+		p1.add(Number[6]);
+		p1.add(Number[5]);
+		p1.add(Number[4]);
+		p1.add(jbtMinus);
+		p1.add(Number[3]);
+		p1.add(Number[2]);
+		p1.add(Number[1]);
+		p1.add(jbtMultiply);
+		p1.add(Number[0]);
+		p1.add(jbtDecimal);
+		p1.add(jbtAnswer);
+		p1.add(jbtDivide);
 		
 		JPanel p2 = new JPanel();
 		p2.add(jtActionDisplay);
 		
-		add(p1, BorderLayout.CENTER);
-		add(p2, BorderLayout.NORTH);
+		add(p1, BorderLayout.SOUTH);
+		add(p2, BorderLayout.CENTER );
 		
 		ButtonListener Action = new ButtonListener();
 
@@ -91,6 +102,8 @@ public class TestCalculate extends JFrame {
 		jbtCsc.addActionListener(Action);
 		jbtTan.addActionListener(Action);
 		jbtCot.addActionListener(Action);
+		jbtRemainder.addActionListener(Action);
+		jbtQuotient.addActionListener(Action);
 	}
 	
 
@@ -99,67 +112,76 @@ public class TestCalculate extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e){
 	
-			if(e.getSource = Number[0] )
+			if(e.getSource() == Number[0] )
 				jtActionDisplay.setText(jtActionDisplay.getText() + "0"); 
-			if(e.getSource = Number[1] )
+			if(e.getSource() == Number[1] )
 				jtActionDisplay.setText(jtActionDisplay.getText() + "1"); 
-			if(e.getSource = Number[2] )
+			if(e.getSource() == Number[2] )
 				jtActionDisplay.setText(jtActionDisplay.getText() + "2"); 
-			if(e.getSource = Number[3] )
+			if(e.getSource() == Number[3] )
 				jtActionDisplay.setText(jtActionDisplay.getText() + "3"); 
-			if(e.getSource = Number[4] )
+			if(e.getSource() == Number[4] )
 				jtActionDisplay.setText(jtActionDisplay.getText() + "4"); 
-			if(e.getSource = Number[5] )
+			if(e.getSource() == Number[5] )
 				jtActionDisplay.setText(jtActionDisplay.getText() + "5");
-			if(e.getSource = Number[6] )
+			if(e.getSource() == Number[6] )
 				jtActionDisplay.setText(jtActionDisplay.getText() + "6"); 
-			if(e.getSource = Number[7] )
+			if(e.getSource() == Number[7] )
 				jtActionDisplay.setText(jtActionDisplay.getText() + "7"); 
-			if(e.getSource = Number[8] )
+			if(e.getSource() == Number[8] )
 				jtActionDisplay.setText(jtActionDisplay.getText() + "8"); 
-			if(e.getSource = Number[9] )
+			if(e.getSource() == Number[9] )
 				jtActionDisplay.setText(jtActionDisplay.getText() + "9"); 
-			if(e.getSource = jbtDecimal )
-				jtActionDisplay.setText(jtActionDisplay.getText() + ".");
-			if(e.getSource = jbtDecimal )
-				jbtAnswer
-			if(e.getSource = jbtAdd  )
+			if(e.getSource() == jbtDecimal )
+				jtActionDisplay.setText(jtActionDisplay.getText() + ".");	
+			if(e.getSource() == jbtAnswer )
+				jtActionDisplay.setText( String.format("%.16f",getAnswer()) );
+			if(e.getSource() == jbtAdd  )
 				jtActionDisplay.setText(jtActionDisplay.getText() + "+"); 
-			if(e.getSource = jbtMinus )
+			if(e.getSource() == jbtMinus )
 				jtActionDisplay.setText(jtActionDisplay.getText() + "-"); 
-			if(e.getSource = jbtMultiply )
+			if(e.getSource() == jbtMultiply )
 				jtActionDisplay.setText(jtActionDisplay.getText() + "x"); 
-			if(e.getSource = jbtDivide )
+			if(e.getSource() == jbtDivide )
 				jtActionDisplay.setText(jtActionDisplay.getText() + "÷"); 
-			if(e.getSource = jbtLog )
+			if(e.getSource() == jbtLog )
 				jtActionDisplay.setText("log" + jtActionDisplay.getText()); 
-			if(e.getSource = jbtLn  )
+			if(e.getSource() == jbtLn  )
 				jtActionDisplay.setText(jtActionDisplay.getText()); 
-			if(e.getSource = jbtDel )
+			if(e.getSource() == jbtDel )
 				jtActionDisplay.setText(""); 
-			if(e.getSource = jbtPi )
+			if(e.getSource() == jbtPi )
 				jtActionDisplay.setText(jtActionDisplay.getText() + "π");
-			if(e.getSource = jbtSin )	
+			if(e.getSource() == jbtSin )	
 				jtActionDisplay.setText("sin" + jtActionDisplay.getText() ); 
-			if(e.getSource = jbtCos )
+			if(e.getSource() == jbtCos )
 				jtActionDisplay.setText("cos" + jtActionDisplay.getText() ); 
-			if(e.getSource = jbtSec )
+			if(e.getSource() == jbtSec )
 				jtActionDisplay.setText("sec" + jtActionDisplay.getText() ); 
-			if(e.getSource = jbtCsc )
+			if(e.getSource() == jbtCsc )
 				jtActionDisplay.setText("csc" + jtActionDisplay.getText() );
-			if(e.getSource = jbtTan )
+			if(e.getSource() == jbtTan )
 				jtActionDisplay.setText("tan" + jtActionDisplay.getText() ); 
-			if(e.getSource = jbtCot )
-				jtActionDisplay.setText("cot" + jtActionDisplay.getText() ); 
-			
+			if(e.getSource() == jbtCot )
+				jtActionDisplay.setText("cot" + jtActionDisplay.getText() );
+			if(e.getSource() == jbtRemainder )
+				jtActionDisplay.setText(jtActionDisplay.getText() + "%"  );
+			if(e.getSource() == jbtQuotient )
+				jtActionDisplay.setText(jtActionDisplay.getText() + "/" );
+		
+		}
+		
+		private double getAnswer(){
+			double  answer = Double.parseDouble( jtActionDisplay.getText() );
+			return answer;
 		}
 	}
 	
 	public static void main( String[] args ){
 		TestCalculate frame = new TestCalculate();
 		frame.setSize(400,600);
-		frame.setTitle(" ");
-		frame.setLocationRelative(null);
+		frame.setTitle(" 小算盤");
+		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 	}
