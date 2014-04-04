@@ -98,25 +98,25 @@ public class TestCalculate extends JFrame implements ActionListener{
 		for(int i = 0; i <= 9; i++)
 			Number[i].addActionListener(actionPerformed(ActionEvent e));
 		
-		case jbtDecimal: jtActionDisplay.
+		case jbtDecimal: jtActionDisplay.setText(jtActionDisplay.getText() + "."); break;
 		case jbtAnswer:
 		
-		case jbtAdd: 
-		case jbtMinus:
-		case jbtMultiply:
-		case jbtDivide:
+		case jbtAdd: jtActionDisplay.setText(jtActionDisplay.getText() + "+"); break;
+		case jbtMinus: jtActionDisplay.setText(jtActionDisplay.getText() + "-"); break;
+		case jbtMultiply: jtActionDisplay.setText(jtActionDisplay.getText() + "x"); break;
+		case jbtDivide: jtActionDisplay.setText(jtActionDisplay.getText() + "÷"); break;
 		
-		case jbtLog:
-		case jbtLn:
-		case jbtDel:
-		case jbtPi:
+		case jbtLog: jtActionDisplay.setText("log" + jtActionDisplay.getText()); break;
+		case jbtLn: jtActionDisplay.setText(jtActionDisplay.getText()); break;
+		case jbtDel: jtActionDisplay.setText(""); break;
+		case jbtPi: jtActionDisplay.setText(jtActionDisplay.getText() + "π"); break;
 		
-		case jbtSin:
-		case jbtCos:
-		case jbtSec:
-		case jbtCsc:
-		case jbtTan:
-		case jbtCot:
+		case jbtSin: jtActionDisplay.setText("sin" + jtActionDisplay.getText() ); break;
+		case jbtCos: jtActionDisplay.setText("cos" + jtActionDisplay.getText() ); break;
+		case jbtSec: jtActionDisplay.setText("sec" + jtActionDisplay.getText() ); break;
+		case jbtCsc: jtActionDisplay.setText("csc" + jtActionDisplay.getText() ); break;
+		case jbtTan: jtActionDisplay.setText("tan" + jtActionDisplay.getText() ); break;
+		case jbtCot:  jtActionDisplay.setText("cot" + jtActionDisplay.getText() ); break;
 		}
 		
 	}
