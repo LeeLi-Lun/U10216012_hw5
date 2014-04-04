@@ -2,7 +2,7 @@ import java.awt.event.*;
 import javax.swing.JFame;
 import javax.swing.border.TitleBorder;
 
-public class TestCalculate extends JFrame implements ActionListener{
+public class TestCalculate extends JFrame {
 	
 	private JButton jbtDecimal= new JButton(".");
 	private JButton jbtAnswer = new JButton("=");
@@ -66,67 +66,72 @@ public class TestCalculate extends JFrame implements ActionListener{
 		add(p1, BorderLayout.CENTER);
 		add(p2, BorderLayout.NORTH);
 	}
+	ButtonListener Action = new ButtonListener();
 	
 		for(int i = 0; i <= 9; i++)
-			Number[i].addActionListener(actionPerformed(ActionEvent e));
+			Number[i].addActionListener(Action);
 			
-		jbtDecimal.addActionListener(actionPerformed(ActionEvent e);
-		jbtAnswer.addActionListener(actionPerformed(ActionEvent e);
+		jbtDecimal.addActionListener(Action);
+		jbtAnswer.addActionListener(Action);
 		
-		jbtAdd.addActionListener(actionPerformed(ActionEvent e);
-		jbtMinus.addActionListener(actionPerformed(ActionEvent e);
-		jbtMultiply.addActionListener(actionPerformed(ActionEvent e);
-		jbtDivide.addActionListener(actionPerformed(ActionEvent e);
+		jbtAdd.addActionListener(Action);
+		jbtMinus.addActionListener(Action);
+		jbtMultiply.addActionListener(Action);
+		jbtDivide.addActionListener(Action);
 		
-		jbtLog.addActionListener(actionPerformed(ActionEvent e);
-		jbtLn.addActionListener(actionPerformed(ActionEvent e);
-		jbtDel.addActionListener(actionPerformed(ActionEvent e);
-		jbtPi.addActionListener(actionPerformed(ActionEvent e);
+		jbtLog.addActionListener(Action);
+		jbtLn.addActionListener(Action);
+		jbtDel.addActionListener(Action);
+		jbtPi.addActionListener(Action);
 		
-		jbtSin.addActionListener(actionPerformed(ActionEvent e);
-		jbtCos.addActionListener(actionPerformed(ActionEvent e);
-		jbtSec.addActionListener(actionPerformed(ActionEvent e);
-		jbtCsc.addActionListener(actionPerformed(ActionEvent e);
-		jbtTan.addActionListener(actionPerformed(ActionEvent e);
-		jbtCot.addActionListener(actionPerformed(ActionEvent e);
+		jbtSin.addActionListener(Action);
+		jbtCos.addActionListener(Action);
+		jbtSec.addActionListener(Action);
+		jbtCsc.addActionListener(Action);
+		jbtTan.addActionListener(Action);
+		jbtCot.addActionListener(Action);
 		
 	
-	@Override
-	public void actionPerformed(ActionEvent e){
-		switch(e.getSource()){
+	
 		
-		case Number[0]: jtActionDisplay.setText(jtActionDisplay.getText() + "0"); break;
-		case Number[1]: jtActionDisplay.setText(jtActionDisplay.getText() + "1"); break;
-		case Number[2]: jtActionDisplay.setText(jtActionDisplay.getText() + "2"); break;
-		case Number[3]: jtActionDisplay.setText(jtActionDisplay.getText() + "3"); break;
-		case Number[4]: jtActionDisplay.setText(jtActionDisplay.getText() + "4"); break;
-		case Number[5]: jtActionDisplay.setText(jtActionDisplay.getText() + "5"); break;
-		case Number[6]: jtActionDisplay.setText(jtActionDisplay.getText() + "6"); break;
-		case Number[7]: jtActionDisplay.setText(jtActionDisplay.getText() + "7"); break;
-		case Number[8]: jtActionDisplay.setText(jtActionDisplay.getText() + "8"); break;
-		case Number[9]: jtActionDisplay.setText(jtActionDisplay.getText() + "9"); break;
+	}
+	
+	private class ButtonListener implements ActionListener{
+		@Override
+		public void actionPerformed(ActionEvent e){
+			switch(e.getSource()){
 		
-		case jbtDecimal: jtActionDisplay.setText(jtActionDisplay.getText() + "."); break;
-		case jbtAnswer:
-		
-		case jbtAdd: jtActionDisplay.setText(jtActionDisplay.getText() + "+"); break;
-		case jbtMinus: jtActionDisplay.setText(jtActionDisplay.getText() + "-"); break;
-		case jbtMultiply: jtActionDisplay.setText(jtActionDisplay.getText() + "x"); break;
-		case jbtDivide: jtActionDisplay.setText(jtActionDisplay.getText() + "÷"); break;
-		
-		case jbtLog: jtActionDisplay.setText("log" + jtActionDisplay.getText()); break;
-		case jbtLn: jtActionDisplay.setText(jtActionDisplay.getText()); break;
-		case jbtDel: jtActionDisplay.setText(""); break;
-		case jbtPi: jtActionDisplay.setText(jtActionDisplay.getText() + "π"); break;
-		
-		case jbtSin: jtActionDisplay.setText("sin" + jtActionDisplay.getText() ); break;
-		case jbtCos: jtActionDisplay.setText("cos" + jtActionDisplay.getText() ); break;
-		case jbtSec: jtActionDisplay.setText("sec" + jtActionDisplay.getText() ); break;
-		case jbtCsc: jtActionDisplay.setText("csc" + jtActionDisplay.getText() ); break;
-		case jbtTan: jtActionDisplay.setText("tan" + jtActionDisplay.getText() ); break;
-		case jbtCot:  jtActionDisplay.setText("cot" + jtActionDisplay.getText() ); break;
+			case Number[0]: jtActionDisplay.setText(jtActionDisplay.getText() + "0"); break;
+			case Number[1]: jtActionDisplay.setText(jtActionDisplay.getText() + "1"); break;
+			case Number[2]: jtActionDisplay.setText(jtActionDisplay.getText() + "2"); break;
+			case Number[3]: jtActionDisplay.setText(jtActionDisplay.getText() + "3"); break;
+			case Number[4]: jtActionDisplay.setText(jtActionDisplay.getText() + "4"); break;
+			case Number[5]: jtActionDisplay.setText(jtActionDisplay.getText() + "5"); break;
+			case Number[6]: jtActionDisplay.setText(jtActionDisplay.getText() + "6"); break;
+			case Number[7]: jtActionDisplay.setText(jtActionDisplay.getText() + "7"); break;
+			case Number[8]: jtActionDisplay.setText(jtActionDisplay.getText() + "8"); break;
+			case Number[9]: jtActionDisplay.setText(jtActionDisplay.getText() + "9"); break;
+				
+			case jbtDecimal: jtActionDisplay.setText(jtActionDisplay.getText() + "."); break;
+			case jbtAnswer:
+			
+			case jbtAdd: jtActionDisplay.setText(jtActionDisplay.getText() + "+"); break;
+			case jbtMinus: jtActionDisplay.setText(jtActionDisplay.getText() + "-"); break;
+			case jbtMultiply: jtActionDisplay.setText(jtActionDisplay.getText() + "x"); break;
+			case jbtDivide: jtActionDisplay.setText(jtActionDisplay.getText() + "÷"); break;
+				
+			case jbtLog: jtActionDisplay.setText("log" + jtActionDisplay.getText()); break;
+			case jbtLn: jtActionDisplay.setText(jtActionDisplay.getText()); break;
+			case jbtDel: jtActionDisplay.setText(""); break;
+			case jbtPi: jtActionDisplay.setText(jtActionDisplay.getText() + "π"); break;
+				
+			case jbtSin: jtActionDisplay.setText("sin" + jtActionDisplay.getText() ); break;
+			case jbtCos: jtActionDisplay.setText("cos" + jtActionDisplay.getText() ); break;
+			case jbtSec: jtActionDisplay.setText("sec" + jtActionDisplay.getText() ); break;
+			case jbtCsc: jtActionDisplay.setText("csc" + jtActionDisplay.getText() ); break;
+			case jbtTan: jtActionDisplay.setText("tan" + jtActionDisplay.getText() ); break;
+			case jbtCot:  jtActionDisplay.setText("cot" + jtActionDisplay.getText() ); break;
 		}
-		
 	}
 	
 	public static void main( String[] args ){
