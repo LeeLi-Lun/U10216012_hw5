@@ -29,7 +29,7 @@ public class TestCalculate extends JFrame {
 	
 	private JButton[] Number = new JButton[10]; //for 0~9 button
 	
-	private JTextField jtActionDisplay = new JTextField("                          ");
+	private JTextField jtActionDisplay = new JTextField("");
 	
 	public TestCalculate(){
 		for(int i = 9; i >= 0; i--){
@@ -37,7 +37,7 @@ public class TestCalculate extends JFrame {
 			}
 			
 		JPanel p1 = new JPanel();
-		p1.setLayout(new GridLayout(7,4));
+		p1.setLayout(new GridLayout(7,4,3,3));
 	
 		p1.add(jbtSin);
 		p1.add(jbtCos);
@@ -69,10 +69,10 @@ public class TestCalculate extends JFrame {
 		p1.add(jbtDivide);
 		
 		JPanel p2 = new JPanel();
-		p2.add(jtActionDisplay);
+		p2.add(jtActionDisplay, BorderLayout.NORTH);
 		
-		add(p1, BorderLayout.SOUTH);
-		add(p2, BorderLayout.CENTER );
+		add(p2, BorderLayout.NORTH );
+		add(p1, BorderLayout.CENTER );
 		
 		ButtonListener Action = new ButtonListener();
 
@@ -111,7 +111,8 @@ public class TestCalculate extends JFrame {
 	private class ButtonListener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e){
-	
+			
+			
 			if(e.getSource() == Number[0] )
 				jtActionDisplay.setText(jtActionDisplay.getText() + "0"); 
 			if(e.getSource() == Number[1] )
@@ -179,7 +180,7 @@ public class TestCalculate extends JFrame {
 	
 	public static void main( String[] args ){
 		TestCalculate frame = new TestCalculate();
-		frame.setSize(400,600);
+		frame.setSize(400,400);
 		frame.setTitle(" 小算盤");
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
