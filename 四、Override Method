@@ -96,7 +96,7 @@ public class TestCalculate extends JFrame implements ActionListener{
 		switch(e.getSource()){
 		
 		for(int i = 0; i <= 9; i++)
-			Number[i].addActionListener(actionPerformed(ActionEvent e));
+			case Number[i]: jtActionDisplay.setText(jtActionDisplay.getText() + "i"); break;
 		
 		case jbtDecimal: jtActionDisplay.setText(jtActionDisplay.getText() + "."); break;
 		case jbtAnswer:
