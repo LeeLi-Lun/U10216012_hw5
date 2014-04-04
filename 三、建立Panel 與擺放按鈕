@@ -40,6 +40,9 @@ public class TestCalculate extends JFrame implements ActionListener{
 			p1.add(Number[i]);
 		}
 		
+		p1.add(jbtDecimal);
+		p1.add(jbtAnswer);
+		
 		p1.add(jbtAdd);
 		p1.add(jbtMinus);
 		p1.add(jbtMultiply);
