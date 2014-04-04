@@ -39,11 +39,6 @@ public class TestCalculate extends JFrame implements ActionListener{
 		frame.setVisiable(true);
 	}
 	
-	private double sin(){};
-	private double cos(){};
-	private double sec(){};
-	private double csc(){};
-	private double tan(){};
-	private double cot(){};
+	
 	
 }
