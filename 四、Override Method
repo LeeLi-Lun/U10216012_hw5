@@ -59,15 +59,33 @@ public class TestCalculate extends JFrame implements ActionListener{
 		
 		add(p1, BorderLayout.CENTER);
 		add(p2, BorderLayout.NORTH);
-		
-		for(int i = 0; i <= 9; i++){
-			Number[i].addActionListener()
-			
-
 	}
 	
+	for(int i = 0; i <= 9; i++)
+			Number[i].addActionListener(actionPerformed(ActionEvent e));
+		
+		jbtAdd.addActionListener(actionPerformed(ActionEvent e);
+		jbtMinus.addActionListener(actionPerformed(ActionEvent e);
+		jbtMultiply.addActionListener(actionPerformed(ActionEvent e);
+		jbtDivide.addActionListener(actionPerformed(ActionEvent e);
+		
+		jbtLog.addActionListener(actionPerformed(ActionEvent e);
+		jbtLn.addActionListener(actionPerformed(ActionEvent e);
+		jbtDel.addActionListener(actionPerformed(ActionEvent e);
+		jbtPi.addActionListener(actionPerformed(ActionEvent e);
+		
+		jbtSin.addActionListener(actionPerformed(ActionEvent e);
+		jbtCos.addActionListener(actionPerformed(ActionEvent e);
+		jbtSec.addActionListener(actionPerformed(ActionEvent e);
+		jbtCsc.addActionListener(actionPerformed(ActionEvent e);
+		jbtTan.addActionListener(actionPerformed(ActionEvent e);
+		jbtCot.addActionListener(actionPerformed(ActionEvent e);
+		
+	
 	@Override
-	private double
+	public void actionPerformed(ActionEvent e){
+		
+	}
 	
 	public static void main( String[] args ){
 		TestCalculate frame = new TestCalculate();
