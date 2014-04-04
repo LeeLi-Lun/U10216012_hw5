@@ -4,6 +4,9 @@ import javax.swing.border.TitleBorder;
 
 public class TestCalculate extends JFrame implements ActionListener{
 	
+	private JButton jbtDecimal= new JButton(".");
+	private JButton jbtAnswer = new JButton("=");
+	
 	private JButton jbtAdd = new JButton("+");
 	private JButton jbtMinus = new JButton("-");
 	private JButton jbtMultiply = new JButton("x");
