@@ -57,6 +57,9 @@ public class TestCalculate extends JFrame implements ActionListener{
 		JPanel p2 = new JPanel();
 		p2.add(jtActionDisplay);
 		
+		add(p1, BorderLayout.CENTER);
+		add(p2, BorderLayout.NORTH);
+		
 	}
 
 
