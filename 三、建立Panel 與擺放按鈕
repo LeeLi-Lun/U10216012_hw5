@@ -26,6 +26,8 @@ public class TestCalculate extends JFrame implements ActionListener{
 	
 	private JButton[] Number = new JButton[10]; //for 0~9 button
 	
+	private JTextField jtActionDisplay = new JTextField();
+	
 	pulic TestCalculate(){
 		JPanel p1 = new JPanel();
 		p1.setLayout(new GridLayout(7,4));
@@ -51,6 +53,9 @@ public class TestCalculate extends JFrame implements ActionListener{
 		p1.add(jbtCsc);
 		p1.add(jbtTan);
 		p1.add(jbtCot);
+		
+		JPanel p2 = new JPanel();
+		p2.add(jtActionDisplay);
 		
 	}
 
