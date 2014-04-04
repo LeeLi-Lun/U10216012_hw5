@@ -42,17 +42,14 @@ public class TestCalculate extends JFrame {
 		
 		p1.add(jbtDecimal);
 		p1.add(jbtAnswer);
-		
 		p1.add(jbtAdd);
 		p1.add(jbtMinus);
 		p1.add(jbtMultiply);
 		p1.add(jbtDivide);
-			
 		p1.add(jbtLog);
 		p1.add(jbtLn);
 		p1.add(jbtDel);
 		p1.add(jbtPi);
-		
 		p1.add(jbtSin);
 		p1.add(jbtCos);
 		p1.add(jbtSec);
@@ -66,6 +63,7 @@ public class TestCalculate extends JFrame {
 		add(p1, BorderLayout.CENTER);
 		add(p2, BorderLayout.NORTH);
 	}
+	
 	ButtonListener Action = new ButtonListener();
 	
 		for(int i = 0; i <= 9; i++)
@@ -73,27 +71,20 @@ public class TestCalculate extends JFrame {
 			
 		jbtDecimal.addActionListener(Action);
 		jbtAnswer.addActionListener(Action);
-		
 		jbtAdd.addActionListener(Action);
 		jbtMinus.addActionListener(Action);
 		jbtMultiply.addActionListener(Action);
 		jbtDivide.addActionListener(Action);
-		
 		jbtLog.addActionListener(Action);
 		jbtLn.addActionListener(Action);
 		jbtDel.addActionListener(Action);
 		jbtPi.addActionListener(Action);
-		
 		jbtSin.addActionListener(Action);
 		jbtCos.addActionListener(Action);
 		jbtSec.addActionListener(Action);
 		jbtCsc.addActionListener(Action);
 		jbtTan.addActionListener(Action);
 		jbtCot.addActionListener(Action);
-		
-	
-	
-		
 	}
 	
 	private class ButtonListener implements ActionListener{
