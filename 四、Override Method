@@ -1,0 +1,84 @@
+import java.awt.event.*;
+import javax.swing.JFame;
+import javax.swing.border.TitleBorder;
+
+public class TestCalculate extends JFrame implements ActionListener{
+	
+	private JButton jbtAdd = new JButton("+");
+	private JButton jbtMinus = new JButton("-");
+	private JButton jbtMultiply = new JButton("x");
+	private JButton jbtDivide = new JButton("÷");
+	
+	private JButton jbtSin = new JButton("sin");
+	private JButton jbtCos = new JButton("cos");
+	private JButton jbtSec = new JButton("sec");
+	private JButton jbtCsc = new JButton("csc");
+	private JButton jbtTan = new JButton("tan");
+	private JButton jbtCot = new JButton("cot");
+	
+	private JButton jbtLog = new JButton("log");
+	private JButton jbtLn = new JButton("ln");
+	private JButton jbtDel = new JButton("del");
+	private JButton jbtPi = new JButton("π");
+	
+	private JButton jbtRemainder = new JButton("%");
+	private JButton jbtQuotient = new JButton("/");
+	
+	private JButton[] Number = new JButton[10]; //for 0~9 button
+	
+	private JTextField jtActionDisplay = new JTextField();
+	
+	pulic TestCalculate(){
+		JPanel p1 = new JPanel();
+		p1.setLayout(new GridLayout(7,4));
+		
+		for(int i = 0; i <= 9; i++){
+			Number[i] = new JButton(""+ i);
+			p1.add(Number[i]);
+		}
+		
+		p1.add(jbtAdd);
+		p1.add(jbtMinus);
+		p1.add(jbtMultiply);
+		p1.add(jbtDivide);
+			
+		p1.add(jbtLog);
+		p1.add(jbtLn);
+		p1.add(jbtDel);
+		p1.add(jbtPi);
+		
+		p1.add(jbtSin);
+		p1.add(jbtCos);
+		p1.add(jbtSec);
+		p1.add(jbtCsc);
+		p1.add(jbtTan);
+		p1.add(jbtCot);
+		
+		JPanel p2 = new JPanel();
+		p2.add(jtActionDisplay);
+		
+		add(p1, BorderLayout.CENTER);
+		add(p2, BorderLayout.NORTH);
+		
+		for(int i = 0; i <= 9; i++){
+			Number[i].addActionListener()
+			
+
+	}
+	
+	@Override
+	private double
+	
+	public static void main( String[] args ){
+		TestCalculate frame = new TestCalculate();
+		frame.setSize(400,600);
+		frame.setTitle(" 小算盤 ");
+		frame.setLocationRelative(null);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisiable(true);
+	}
+	
+
+	
+	
+}
