@@ -62,13 +62,19 @@ public class TestCalculate extends JFrame {
 		
 		add(p1, BorderLayout.CENTER);
 		add(p2, BorderLayout.NORTH);
-	}
-	
-	ButtonListener Action = new ButtonListener();
-	
-		for(int i = 0; i <= 9; i++)
-			Number[i].addActionListener(Action);
-			
+		
+		ButtonListener Action = new ButtonListener();
+
+		Number[0].addActionListener(Action);
+		Number[1].addActionListener(Action);
+		Number[2].addActionListener(Action);
+		Number[3].addActionListener(Action);
+		Number[4].addActionListener(Action);
+		Number[5].addActionListener(Action);
+		Number[6].addActionListener(Action);
+		Number[7].addActionListener(Action);
+		Number[8].addActionListener(Action);
+		Number[9].addActionListener(Action);
 		jbtDecimal.addActionListener(Action);
 		jbtAnswer.addActionListener(Action);
 		jbtAdd.addActionListener(Action);
@@ -86,6 +92,8 @@ public class TestCalculate extends JFrame {
 		jbtTan.addActionListener(Action);
 		jbtCot.addActionListener(Action);
 	}
+	
+}
 	
 	private class ButtonListener implements ActionListener{
 		@Override
@@ -125,11 +133,10 @@ public class TestCalculate extends JFrame {
 		}
 	}
 	
-	
 	public static void main( String[] args ){
 		TestCalculate frame = new TestCalculate();
 		frame.setSize(400,600);
-		frame.setTitle(" 小算盤 ");
+		frame.setTitle(" ");
 		frame.setLocationRelative(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisiable(true);
