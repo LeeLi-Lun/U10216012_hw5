@@ -24,7 +24,7 @@ public class TestCalculate extends JFrame implements ActionListener{
 	private JButton jbtRemainder = new JButton("%");
 	private JButton jbtQuotient = new JButton("/");
 	
-	private JButton[] Number = new JButton[10];
+	private JButton[] Number = new JButton[10]; //for 0~9 button
 	
 	pulic TestCalculate(){
 
