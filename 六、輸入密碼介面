@@ -1,0 +1,56 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;  
+
+public class GUIPassword extends JFrame { 
+ 
+ private JLabel lab1 = new JLabel("請輸入密碼");
+ private JPasswordField password = new JPasswordField(); 
+ private JButton signinButton = new JButton("登入");
+ private JButton cancelButton = new JButton("退出");
+	
+	public GUIPassword() { 
+		
+		add(lab1);
+		add(password); 
+		add(signinButton);
+		add(cancelButton);  
+		
+		setLayout(new GridLayout(2, 2, 2, 2)); 
+  
+		ButtonListener Action = new ButtonListener();
+		signinButton.addActionListener(Action);
+		cancelButton.addActionListener(Action);
+	}	
+	
+	private class ButtonListener implements ActionListener{
+		@Override
+		public void actionPerformed(ActionEvent e){
+			String pw = String.valueOf( password.getPassword() ); 	
+			
+			if(e.getSource() == signinButton ){
+				String Cpw = "0000";
+				if( ! pw.equals(Cpw) ){
+					lab1.setText("密碼錯誤，請重新輸入");
+				}
+				if(  pw.equals(Cpw) ){
+					frame.setVisible(false);
+				}
+			}
+				
+			if(e.getSource() == cancelButton ){
+				System.exit(0); 
+			}
+		}
+	}
+		
+	public static void main(String[] args) {
+		GUIPassword frame = new GUIPassword();
+		frame.setSize(300,100);
+		frame.setTitle("密碼驗證 ");
+		frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setResizable(false);
+		frame.setVisible(true);
+	}
+}
