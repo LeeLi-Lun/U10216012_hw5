@@ -293,22 +293,16 @@ public class TestCalculate extends JFrame {
 			}
 			if(e.getSource() == jbtDecimal ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + ".");	
-				B = A;
-				A = 0L;
-				
 			}
 			if(e.getSource() == jbtDel ){
 				jtActionDisplay.setText(""); 
 			}	
 			if(e.getSource() == jbtAnswer ){
-				
 				A = Answer(op);
 				df.format(A);
 				jtActionDisplay.setText( Long.toString(A) );
 			}
 		}
-		private void Decimal(long B, long A){}
-		
 		private void Answer(int op){
 			switch (op){
 				case 0: A = B; break;
