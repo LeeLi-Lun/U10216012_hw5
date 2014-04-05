@@ -116,112 +116,112 @@ public class TestCalculate extends JFrame {
 			
 			if(e.getSource() == Number[0] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "0");
-				getAnswer(jtActionDisplay.getText());
+				getAnswer(0);
 			}
 			if(e.getSource() == Number[1] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "1"); 
-				getAnswer(jtActionDisplay.getText());
+				getAnswer(1);
 			}
 			if(e.getSource() == Number[2] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "2"); 
-				getAnswer(jtActionDisplay.getText());
+				getAnswer(2);
 			}
 			if(e.getSource() == Number[3] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "3"); 
-				getAnswer(jtActionDisplay.getText());
+				getAnswer(3);
 			}
 			if(e.getSource() == Number[4] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "4"); 
-				getAnswer(jtActionDisplay.getText());
+				getAnswer(4);
 			}
 			if(e.getSource() == Number[5] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "5");
-				getAnswer(jtActionDisplay.getText());
+				getAnswer(5);
 			}
 			if(e.getSource() == Number[6] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "6"); 
-				getAnswer(jtActionDisplay.getText());
+				getAnswer(6);
 			}
 			if(e.getSource() == Number[7] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "7"); 
-				getAnswer(jtActionDisplay.getText());
+				getAnswer(7);
 			}
 			if(e.getSource() == Number[8] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "8"); 
-				getAnswer(jtActionDisplay.getText());
+				getAnswer(8);
 			}
 			if(e.getSource() == Number[9] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "9"); 
-				getAnswer(jtActionDisplay.getText());
+				getAnswer(9);
 			}
 			if(e.getSource() == jbtDecimal ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + ".");	
-				getAnswer(jtActionDisplay.getText());
+				getAnswer();
 			}
 	//		if(e.getSource() == jbtAnswer ){
 	//			jtActionDisplay.setText( String.format("%.16f",getAnswer()) );
 	//		}
 			if(e.getSource() == jbtAdd  ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "+"); 
-				getAnswer(jtActionDisplay.getText());
+				getAnswer();
 			}
 			if(e.getSource() == jbtMinus ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "-"); 
-				getAnswer(jtActionDisplay.getText());
+				getAnswer();
 			}
 			if(e.getSource() == jbtMultiply ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "x"); 
-				getAnswer(jtActionDisplay.getText());
+				getAnswer();
 			}
 			if(e.getSource() == jbtDivide ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "÷");
-				getAnswer(jtActionDisplay.getText());
+				getAnswer();
 			}
 			if(e.getSource() == jbtLog ){
 				jtActionDisplay.setText("log" + jtActionDisplay.getText()); 
-				getAnswer(jtActionDisplay.getText());
+				getAnswer();
 			}
 			if(e.getSource() == jbtLn  ){
 				jtActionDisplay.setText(jtActionDisplay.getText());
-				getAnswer(jtActionDisplay.getText());	
+				getAnswer();	
 			}				
 			if(e.getSource() == jbtDel )
 				jtActionDisplay.setText(""); 
 			if(e.getSource() == jbtPi ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "π");
-				getAnswer(jtActionDisplay.getText());
+				getAnswer();
 			}
 			if(e.getSource() == jbtSin ){	
 				jtActionDisplay.setText("sin" + jtActionDisplay.getText() ); 
-				getAnswer(jtActionDisplay.getText());
+				getAnswer();
 			}
 			if(e.getSource() == jbtCos ){
 				jtActionDisplay.setText("cos" + jtActionDisplay.getText() ); 
-				getAnswer(jtActionDisplay.getText());
+				getAnswer();
 			}
 			if(e.getSource() == jbtSec ){
 				jtActionDisplay.setText("sec" + jtActionDisplay.getText() ); 
-				getAnswer(jtActionDisplay.getText());
+				getAnswer();
 			}
 			if(e.getSource() == jbtCsc ){
 				jtActionDisplay.setText("csc" + jtActionDisplay.getText() );
-				getAnswer(jtActionDisplay.getText());
+				getAnswer();
 			}
 			if(e.getSource() == jbtTan ){
 				jtActionDisplay.setText("tan" + jtActionDisplay.getText() ); 
-				getAnswer(jtActionDisplay.getText());
+				getAnswer();
 			}
 			if(e.getSource() == jbtCot ){
 				jtActionDisplay.setText("cot" + jtActionDisplay.getText() );
-				getAnswer(jtActionDisplay.getText());
+				getAnswer();
 			}
 			if(e.getSource() == jbtRemainder ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "%"  );
-				getAnswer(jtActionDisplay.getText());
+				getAnswer();
 			}
 			if(e.getSource() == jbtQuotient ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "/" );
-				getAnswer(jtActionDisplay.getText());
+				getAnswer();
 			}
 		
 		}
@@ -231,7 +231,7 @@ public class TestCalculate extends JFrame {
 			return answer;
 		}
 		
-		private double getAnswer(String numbers){
+		private double getAnswer(int number){
 			
 		}
 	}
