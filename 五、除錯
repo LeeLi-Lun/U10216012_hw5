@@ -167,7 +167,7 @@ public class TestCalculate extends JFrame {
 				jtActionDisplay.setText(""); 
 				label.setText("+");
 				op = 1;
-				if( time == 2 ){
+				if( time == 1 ){
 					B = Answer(op);
 				}
 				if( time == 0 ){
@@ -180,7 +180,7 @@ public class TestCalculate extends JFrame {
 				jtActionDisplay.setText(""); 
 				label.setText("-");
 				op = 2;
-				if( time == 2 ){
+				if( time == 1 ){
 					B = Answer(op);
 				}
 				if( time == 0 ){
@@ -193,7 +193,7 @@ public class TestCalculate extends JFrame {
 				jtActionDisplay.setText(""); 
 				label.setText("x");
 				op = 3;
-				if( time == 2 ){
+				if( time == 1 ){
 					B = Answer(op);
 				}
 				if( time == 0 ){
@@ -206,14 +206,14 @@ public class TestCalculate extends JFrame {
 				jtActionDisplay.setText(""); 
 				label.setText("÷");
 				op = 4;
-				if( time == 2 ){
+				if( time == 1 ){
 					B = Answer(op);
 				}
 				if( time == 0 ){
 					B = A;
 				}
 				A = 0;
-				time ++;
+				
 			}
 			if(e.getSource() == jbtLog ){
 				jtActionDisplay.setText(""); 
@@ -222,70 +222,71 @@ public class TestCalculate extends JFrame {
 				A = ( Math.log(B) / Math.log(10) );
 				df.format(A);
 				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
 			}
 			if(e.getSource() == jbtLn  ){
 				jtActionDisplay.setText(""); 
 				label.setText("");
-				B = A;
-				A = 0;
+				B = A;				
 				A = Math.log(B);
 				df.format(A);
 				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
 			}				
 			
 			if(e.getSource() == jbtSin ){	
 				jtActionDisplay.setText(""); 
 				label.setText("");
 				B = A ;
-				A = 0;
 				A = Math.sin(B);
 				df.format(A);
 				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
 			}
 			if(e.getSource() == jbtCos ){
 				jtActionDisplay.setText(""); 
 				label.setText("");
-				B = A  ;
-				A = 0;
+				B = A ;
 				A = Math.cos(B);
 				df.format(A);
 				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
 			}
 			if(e.getSource() == jbtSec ){
 				jtActionDisplay.setText(""); 
 				label.setText("");
-				B = A  ;
-				A = 0;
+				B = A ;
 				A = ( 1/( Math.cos(B) ));
 				df.format(A);
 				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
 			}
 			if(e.getSource() == jbtCsc ){
 				jtActionDisplay.setText(""); 
 				label.setText("");
-				B = A  ;
-				A = 0;
+				B = A ;
 				A =( 1/ Math.sin(B)) ;
 				df.format(A);
 				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
 			}
 			if(e.getSource() == jbtTan ){
 				jtActionDisplay.setText(""); 
 				label.setText("");
 				B = A ;
-				A = 0;
 				A = Math.tan(B);
 				df.format(A);
 				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
 			}
 			if(e.getSource() == jbtCot ){
 				jtActionDisplay.setText(""); 
 				label.setText("");
-				B = A  ;
-				A = 0;
+				B = A ;
 				A = (1 / Math.tan(B));
 				df.format(A);
 				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
 			}
 			if(e.getSource() == jbtRemainder ){
 				jtActionDisplay.setText(""); 
@@ -309,6 +310,7 @@ public class TestCalculate extends JFrame {
 				A = B * PI;
 				df.format(A);
 				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
 			}
 			if(e.getSource() == jbtDecimal ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + ".");	
@@ -316,15 +318,16 @@ public class TestCalculate extends JFrame {
 			if(e.getSource() == jbtDel ){
 				jtActionDisplay.setText(""); 
 				label.setText("");
+				A = 0;
 			}	
 			if(e.getSource() == jbtAnswer ){
 				label.setText("=");
 				A = Answer(op);
 				df.format(A);
 				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
 			}
-			B = 0;
-			A = 0;
+			
 		}
 		private double Answer(int op){
 			switch (op){
