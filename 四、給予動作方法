@@ -116,112 +116,114 @@ public class TestCalculate extends JFrame {
 			
 			if(e.getSource() == Number[0] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "0");
-				getAnswer(0);
+				getAnswer("0");
 			}
 			if(e.getSource() == Number[1] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "1"); 
-				getAnswer(1);
+				getAnswer("1");
 			}
 			if(e.getSource() == Number[2] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "2"); 
-				getAnswer(2);
+				getAnswer("2");
 			}
 			if(e.getSource() == Number[3] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "3"); 
-				getAnswer(3);
+				getAnswer("3");
 			}
 			if(e.getSource() == Number[4] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "4"); 
-				getAnswer(4);
+				getAnswer("4");
 			}
 			if(e.getSource() == Number[5] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "5");
-				getAnswer(5);
+				getAnswer("5");
 			}
 			if(e.getSource() == Number[6] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "6"); 
-				getAnswer(6);
+				getAnswer("6");
 			}
 			if(e.getSource() == Number[7] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "7"); 
-				getAnswer(7);
+				getAnswer("7");
 			}
 			if(e.getSource() == Number[8] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "8"); 
-				getAnswer(8);
+				getAnswer("8");
 			}
 			if(e.getSource() == Number[9] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "9"); 
-				getAnswer(9);
+				getAnswer("9");
 			}
 			if(e.getSource() == jbtDecimal ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + ".");	
-				getAnswer();
+				getAnswer("Decimal");
 			}
 	//		if(e.getSource() == jbtAnswer ){
 	//			jtActionDisplay.setText( String.format("%.16f",getAnswer()) );
 	//		}
 			if(e.getSource() == jbtAdd  ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "+"); 
-				getAnswer();
+				getAnswer("Add");
 			}
 			if(e.getSource() == jbtMinus ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "-"); 
-				getAnswer();
+				getAnswer("Minus");
 			}
 			if(e.getSource() == jbtMultiply ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "x"); 
-				getAnswer();
+				getAnswer("Multiply");
 			}
 			if(e.getSource() == jbtDivide ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "÷");
-				getAnswer();
+				getAnswer("Divide");
 			}
 			if(e.getSource() == jbtLog ){
 				jtActionDisplay.setText("log" + jtActionDisplay.getText()); 
-				getAnswer();
+				getAnswer("Log");
 			}
 			if(e.getSource() == jbtLn  ){
 				jtActionDisplay.setText(jtActionDisplay.getText());
-				getAnswer();	
+				getAnswer("Ln");
 			}				
-			if(e.getSource() == jbtDel )
+			if(e.getSource() == jbtDel ){
 				jtActionDisplay.setText(""); 
+				getAnswer("Del");
+			}	
 			if(e.getSource() == jbtPi ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "π");
-				getAnswer();
+				getAnswer("Pi");
 			}
 			if(e.getSource() == jbtSin ){	
 				jtActionDisplay.setText("sin" + jtActionDisplay.getText() ); 
-				getAnswer();
+				getAnswer("Sin");
 			}
 			if(e.getSource() == jbtCos ){
 				jtActionDisplay.setText("cos" + jtActionDisplay.getText() ); 
-				getAnswer();
+				getAnswer("Cos");
 			}
 			if(e.getSource() == jbtSec ){
 				jtActionDisplay.setText("sec" + jtActionDisplay.getText() ); 
-				getAnswer();
+				getAnswer("Sec");
 			}
 			if(e.getSource() == jbtCsc ){
 				jtActionDisplay.setText("csc" + jtActionDisplay.getText() );
-				getAnswer();
+				getAnswer("Csc");
 			}
 			if(e.getSource() == jbtTan ){
 				jtActionDisplay.setText("tan" + jtActionDisplay.getText() ); 
-				getAnswer();
+				getAnswer("Tan");
 			}
 			if(e.getSource() == jbtCot ){
 				jtActionDisplay.setText("cot" + jtActionDisplay.getText() );
-				getAnswer();
+				getAnswer("Cot");
 			}
 			if(e.getSource() == jbtRemainder ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "%"  );
-				getAnswer();
+				getAnswer("Remainder");
 			}
 			if(e.getSource() == jbtQuotient ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "/" );
-				getAnswer();
+				getAnswer("Quotient");
 			}
 		
 		}
@@ -231,7 +233,7 @@ public class TestCalculate extends JFrame {
 			return answer;
 		}
 		
-		private double getAnswer(int number){
+		private double getAnswer(String number){
 			
 		}
 	}
