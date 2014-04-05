@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.text.DecimalFormat;
 
 public class TestCalculate extends JFrame {
 	
@@ -29,22 +30,20 @@ public class TestCalculate extends JFrame {
 	
 	private JButton[] Number = new JButton[10]; //for 0~9 button
 	
-	private JTextField jtActionDisplay = new JTextField(12);
-	long A = 0L;
-	long B = 0L;
+	private JTextField jtActionDisplay = new JTextField(10);
+	double A = 0;
+	double B = 0;
 	int op =0;
 	int time = 0;
 	
 	public TestCalculate(){
-		DecimalFormat df = new DecimalFormat("################.################"); 
-		jtActionDisplay.setFont(new Font("Dialog", Font.BOLD, 35));
-		
+		jtActionDisplay.setFont(new Font("Dialog", Font.BOLD, 30)); 
 		for(int i = 9; i >= 0; i--){
 				Number[i] = new JButton(""+ i);
 			}
 			
 		JPanel p1 = new JPanel();
-		p1.setLayout(new GridLayout(7,4,3,3));
+		p1.setLayout(new GridLayout(7,4,2,2));
 	
 		p1.add(jbtSin);
 		p1.add(jbtCos);
@@ -76,7 +75,7 @@ public class TestCalculate extends JFrame {
 		p1.add(jbtDivide);
 		
 		JPanel p2 = new JPanel();
-		p2.add(jtActionDisplay, BorderLayout.NORTH);
+		p2.add(jtActionDisplay);
 		
 		add(p2, BorderLayout.NORTH );
 		add(p1, BorderLayout.CENTER );
@@ -116,47 +115,48 @@ public class TestCalculate extends JFrame {
 
 	
 	private class ButtonListener implements ActionListener{
+		DecimalFormat df = new DecimalFormat("################.################"); 
 		@Override
 		public void actionPerformed(ActionEvent e){		
 			if(e.getSource() == Number[0] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "0");
-				A = Long.parseLong(jtActionDisplay.getText());
+				A = Double.parseDouble(jtActionDisplay.getText());
 			}
 			if(e.getSource() == Number[1] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "1"); 
-				A = Long.parseLong(jtActionDisplay.getText());
+				A = Double.parseDouble(jtActionDisplay.getText());
 			}
 			if(e.getSource() == Number[2] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "2"); 
-				A = Long.parseLong(jtActionDisplay.getText());
+				A = Double.parseDouble(jtActionDisplay.getText());
 			}
 			if(e.getSource() == Number[3] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "3"); 
-				A = Long.parseLong(jtActionDisplay.getText());
+				A = Double.parseDouble(jtActionDisplay.getText());
 			}
 			if(e.getSource() == Number[4] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "4"); 
-				A = Long.parseLong(jtActionDisplay.getText());
+				A = Double.parseDouble(jtActionDisplay.getText());
 			}
 			if(e.getSource() == Number[5] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "5");
-				A = Long.parseLong(jtActionDisplay.getText());
+				A = Double.parseDouble(jtActionDisplay.getText());
 			}
 			if(e.getSource() == Number[6] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "6"); 
-				A = Long.parseLong(jtActionDisplay.getText());
+				A = Double.parseDouble(jtActionDisplay.getText());
 			}
 			if(e.getSource() == Number[7] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "7"); 
-				A = Long.parseLong(jtActionDisplay.getText());
+				A = Double.parseDouble(jtActionDisplay.getText());
 			}
 			if(e.getSource() == Number[8] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "8"); 
-				A = Long.parseLong(jtActionDisplay.getText());
+				A = Double.parseDouble(jtActionDisplay.getText());
 			}
 			if(e.getSource() == Number[9] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "9"); 
-				A = Long.parseLong(jtActionDisplay.getText());
+				A = Double.parseDouble(jtActionDisplay.getText());
 			}
 			
 			if(e.getSource() == jbtAdd  ){
@@ -168,7 +168,7 @@ public class TestCalculate extends JFrame {
 				if( time <= 1 ){
 					B = A;
 				}
-				A = 0L;
+				A = 0;
 				time ++;
 			}
 			if(e.getSource() == jbtMinus ){
@@ -180,7 +180,7 @@ public class TestCalculate extends JFrame {
 				if( time <= 1 ){
 					B = A;
 				}
-				A = 0L;
+				A = 0;
 				time ++;
 			}
 			if(e.getSource() == jbtMultiply ){
@@ -192,7 +192,7 @@ public class TestCalculate extends JFrame {
 				if( time <= 1 ){
 					B = A;
 				}
-				A = 0L;
+				A = 0;
 				time ++;
 			}
 			if(e.getSource() == jbtDivide ){
@@ -204,7 +204,7 @@ public class TestCalculate extends JFrame {
 				if( time <= 1 ){
 					B = A;
 				}
-				A = 0L;
+				A = 0;
 				time ++;
 			}
 			if(e.getSource() == jbtLog ){
@@ -212,84 +212,84 @@ public class TestCalculate extends JFrame {
 				B = A ;
 				A = ( Math.log(B) / Math.log(10) );
 				df.format(A);
-				jtActionDisplay.setText( Long.toString(A) );
+				jtActionDisplay.setText( Double.toString(A) );
 			}
 			if(e.getSource() == jbtLn  ){
 				jtActionDisplay.setText(jtActionDisplay.getText());
 				B = A;
-				A = 0L;
+				A = 0;
 				A = Math.log(B);
 				df.format(A);
-				jtActionDisplay.setText( Long.toString(A) );
+				jtActionDisplay.setText( Double.toString(A) );
 			}				
 			
 			if(e.getSource() == jbtSin ){	
 				jtActionDisplay.setText("sin" + jtActionDisplay.getText() ); 
 				B = A ;
-				A = 0L;
+				A = 0;
 				A = Math.sin(B);
 				df.format(A);
-				jtActionDisplay.setText( Long.toString(A) );
+				jtActionDisplay.setText( Double.toString(A) );
 			}
 			if(e.getSource() == jbtCos ){
 				jtActionDisplay.setText("cos" + jtActionDisplay.getText() ); 
 				B = A ;
-				A = 0L;
+				A = 0;
 				A = Math.cos(B);
 				df.format(A);
-				jtActionDisplay.setText( Long.toString(A) );
+				jtActionDisplay.setText( Double.toString(A) );
 			}
 			if(e.getSource() == jbtSec ){
 				jtActionDisplay.setText("sec" + jtActionDisplay.getText() ); 
 				B = A ;
-				A = 0L;
-				A = Math.sec(B);
+				A = 0;
+				A = ( 1 / Math.cos(B));
 				df.format(A);
-				jtActionDisplay.setText( Long.toString(A) );
+				jtActionDisplay.setText( Double.toString(A) );
 			}
 			if(e.getSource() == jbtCsc ){
 				jtActionDisplay.setText("csc" + jtActionDisplay.getText() );
 				B = A ;
-				A = 0L;
-				A = Math.csc(B) ;
+				A = 0;
+				A =( 1/ Math.sin(B)) ;
 				df.format(A);
-				jtActionDisplay.setText( Long.toString(A) );
+				jtActionDisplay.setText( Double.toString(A) );
 			}
 			if(e.getSource() == jbtTan ){
 				jtActionDisplay.setText("tan" + jtActionDisplay.getText() ); 
 				B = A ;
-				A = 0L;
+				A = 0;
 				A = Math.tan(B);
 				df.format(A);
-				jtActionDisplay.setText( Long.toString(A) );
+				jtActionDisplay.setText( Double.toString(A) );
 			}
 			if(e.getSource() == jbtCot ){
 				jtActionDisplay.setText("cot" + jtActionDisplay.getText() );
 				B = A ;
-				A = 0L;
-				A = Math.cot(B);
+				A = 0;
+				A = (1 / Math.tan(B));
 				df.format(A);
-				jtActionDisplay.setText( Long.toString(A) );
+				jtActionDisplay.setText( Double.toString(A) );
 			}
 			if(e.getSource() == jbtRemainder ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "%"  );
 				B = A;
-				A = 0L;
+				A = 0;
 				op = 5;
 			}
 			if(e.getSource() == jbtQuotient ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "/" );
 				B = A;
-				A = 0L;
+				A = 0;
 				op = 6;
 			}
 			if(e.getSource() == jbtPi ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "π");
 				B = A;
-				A = 0L;
-				A = B * 3.141592653589793
+				A = 0;
+				A = B * 3.141592653589793;
 				df.format(A);
-				jtActionDisplay.setText( Long.toString(A) );
+				jtActionDisplay.setText( Double.toString(A) );
 			}
 			if(e.getSource() == jbtDecimal ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + ".");	
@@ -300,10 +300,10 @@ public class TestCalculate extends JFrame {
 			if(e.getSource() == jbtAnswer ){
 				A = Answer(op);
 				df.format(A);
-				jtActionDisplay.setText( Long.toString(A) );
+				jtActionDisplay.setText( Double.toString(A) );
 			}
 		}
-		private void Answer(int op){
+		private double Answer(int op){
 			switch (op){
 				case 0: A = B; break;
 				case 1: A = B + A; time = 0; break;
