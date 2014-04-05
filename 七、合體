@@ -1,0 +1,408 @@
+ 
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.text.DecimalFormat;
+
+public class GUIPassword extends JFrame { 
+ 
+ private JLabel lab1 = new JLabel("請輸入密碼");
+ private JPasswordField password = new JPasswordField(); 
+ private JButton signinButton = new JButton("登入");
+ private JButton cancelButton = new JButton("退出");
+ public static int open = 0;
+	public GUIPassword() { 
+		
+		add(lab1);
+		add(password); 
+		add(signinButton);
+		add(cancelButton);  
+		
+		setLayout(new GridLayout(2, 2, 2, 2)); 
+  
+		ButtonListener Action = new ButtonListener();
+		signinButton.addActionListener(Action);
+		cancelButton.addActionListener(Action);
+	}	
+	
+	private class ButtonListener implements ActionListener{
+		@Override
+		public void actionPerformed(ActionEvent e){
+			String pw = String.valueOf( password.getPassword() ); 	
+			
+			if(e.getSource() == signinButton ){
+				String Cpw = "0000";
+				if( ! pw.equals(Cpw) ){
+					lab1.setText("密碼錯誤，請重新輸入");
+				}
+				if(  pw.equals(Cpw) ){
+					setVisible(false);
+					TestCalculate frame2 = new TestCalculate();
+					frame2.setSize(400,300);
+					frame2.setTitle(" 小算盤");
+					frame2.setLocationRelativeTo(null);
+					frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					frame2.setResizable(false);
+					frame2.setVisible(true);
+				}
+			}
+				
+			if(e.getSource() == cancelButton ){
+				System.exit(0); 
+			}
+		}
+	}
+		
+	public static void main(String[] args) {
+		GUIPassword frame1 = new GUIPassword();
+		frame1.setSize(300,100);
+		frame1.setTitle("密碼驗證 ");
+		frame1.setLocationRelativeTo(null);
+		frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame1.setResizable(false);
+		frame1.setVisible(true);
+	}
+}
+
+class TestCalculate extends JFrame {
+	
+	private JButton jbtDecimal= new JButton(".");
+	private JButton jbtAnswer = new JButton("=");
+	
+	private JButton jbtAdd = new JButton("+");
+	private JButton jbtMinus = new JButton("-");
+	private JButton jbtMultiply = new JButton("x");
+	private JButton jbtDivide = new JButton("÷");
+	
+	private JButton jbtSin = new JButton("sin");
+	private JButton jbtCos = new JButton("cos");
+	private JButton jbtSec = new JButton("sec");
+	private JButton jbtCsc = new JButton("csc");
+	private JButton jbtTan = new JButton("tan");
+	private JButton jbtCot = new JButton("cot");
+	
+	private JButton jbtLog = new JButton("log");
+	private JButton jbtLn = new JButton("ln");
+	private JButton jbtDel = new JButton("del");
+	private JButton jbtPi = new JButton("π");
+	
+	private JButton jbtRemainder = new JButton("%");
+	private JButton jbtQuotient = new JButton("/");
+	
+	private JButton[] Number = new JButton[10]; //for 0~9 button	
+	private JLabel label = new JLabel("");
+	private JTextField jtActionDisplay = new JTextField(15);
+	
+	public static final double PI = 3.141592653589793;
+	double A = 0;
+	double B = 0;
+	int op =0;
+	int time = 0;
+	
+	public TestCalculate(){
+		jtActionDisplay.setFont(new Font("Dialog", Font.BOLD, 25)); 
+		label.setFont(new Font("Dialog", Font.BOLD, 15));
+		for(int i = 9; i >= 0; i--){
+				Number[i] = new JButton(""+ i);
+			}
+			
+		JPanel p1 = new JPanel();
+		p1.setLayout(new GridLayout(7,4,2,2));
+	
+		p1.add(jbtSin);
+		p1.add(jbtCos);
+		p1.add(jbtSec);
+		p1.add(jbtLog);
+		p1.add(jbtCsc);
+		p1.add(jbtTan);
+		p1.add(jbtCot);
+		p1.add(jbtLn);
+		p1.add(jbtRemainder);
+		p1.add(jbtQuotient);
+		p1.add(jbtPi);
+		p1.add(jbtDel);
+		p1.add(Number[7]);
+		p1.add(Number[8]);
+		p1.add(Number[9]);
+		p1.add(jbtAdd);
+		p1.add(Number[4]);
+		p1.add(Number[5]);
+		p1.add(Number[6]);
+		p1.add(jbtMinus);
+		p1.add(Number[1]);
+		p1.add(Number[2]);
+		p1.add(Number[3]);
+		p1.add(jbtMultiply);
+		p1.add(Number[0]);
+		p1.add(jbtDecimal);
+		p1.add(jbtAnswer);
+		p1.add(jbtDivide);
+		
+		JPanel p2 = new JPanel();
+		p2.add(label);
+		p2.add(jtActionDisplay,BorderLayout.SOUTH);
+		
+		add(p2, BorderLayout.NORTH );
+		add(p1, BorderLayout.CENTER );
+		
+		ButtonListener Action = new ButtonListener();
+
+		Number[0].addActionListener(Action);
+		Number[1].addActionListener(Action);
+		Number[2].addActionListener(Action);
+		Number[3].addActionListener(Action);
+		Number[4].addActionListener(Action);
+		Number[5].addActionListener(Action);
+		Number[6].addActionListener(Action);
+		Number[7].addActionListener(Action);
+		Number[8].addActionListener(Action);
+		Number[9].addActionListener(Action);
+		jbtDecimal.addActionListener(Action);
+		jbtAnswer.addActionListener(Action);
+		jbtAdd.addActionListener(Action);
+		jbtMinus.addActionListener(Action);
+		jbtMultiply.addActionListener(Action);
+		jbtDivide.addActionListener(Action);
+		jbtLog.addActionListener(Action);
+		jbtLn.addActionListener(Action);
+		jbtDel.addActionListener(Action);
+		jbtPi.addActionListener(Action);
+		jbtSin.addActionListener(Action);
+		jbtCos.addActionListener(Action);
+		jbtSec.addActionListener(Action);
+		jbtCsc.addActionListener(Action);
+		jbtTan.addActionListener(Action);
+		jbtCot.addActionListener(Action);
+		jbtRemainder.addActionListener(Action);
+		jbtQuotient.addActionListener(Action);
+		
+		
+	}
+	
+
+	
+	private class ButtonListener implements ActionListener{
+		DecimalFormat df = new DecimalFormat("################.################"); 
+		@Override
+		public void actionPerformed(ActionEvent e){		
+			if(e.getSource() == Number[0] ){
+				jtActionDisplay.setText(jtActionDisplay.getText() + "0");
+				A = Double.parseDouble(jtActionDisplay.getText());
+			}
+			if(e.getSource() == Number[1] ){
+				jtActionDisplay.setText(jtActionDisplay.getText() + "1"); 
+				A = Double.parseDouble(jtActionDisplay.getText());
+			}
+			if(e.getSource() == Number[2] ){
+				jtActionDisplay.setText(jtActionDisplay.getText() + "2"); 
+				A = Double.parseDouble(jtActionDisplay.getText());
+			}
+			if(e.getSource() == Number[3] ){
+				jtActionDisplay.setText(jtActionDisplay.getText() + "3"); 
+				A = Double.parseDouble(jtActionDisplay.getText());
+			}
+			if(e.getSource() == Number[4] ){
+				jtActionDisplay.setText(jtActionDisplay.getText() + "4"); 
+				A = Double.parseDouble(jtActionDisplay.getText());
+			}
+			if(e.getSource() == Number[5] ){
+				jtActionDisplay.setText(jtActionDisplay.getText() + "5");
+				A = Double.parseDouble(jtActionDisplay.getText());
+			}
+			if(e.getSource() == Number[6] ){
+				jtActionDisplay.setText(jtActionDisplay.getText() + "6"); 
+				A = Double.parseDouble(jtActionDisplay.getText());
+			}
+			if(e.getSource() == Number[7] ){
+				jtActionDisplay.setText(jtActionDisplay.getText() + "7"); 
+				A = Double.parseDouble(jtActionDisplay.getText());
+			}
+			if(e.getSource() == Number[8] ){
+				jtActionDisplay.setText(jtActionDisplay.getText() + "8"); 
+				A = Double.parseDouble(jtActionDisplay.getText());
+			}
+			if(e.getSource() == Number[9] ){
+				jtActionDisplay.setText(jtActionDisplay.getText() + "9"); 
+				A = Double.parseDouble(jtActionDisplay.getText());
+			}
+			
+			if(e.getSource() == jbtAdd  ){
+				jtActionDisplay.setText(""); 
+				label.setText("+");
+				op = 1;
+				if( time == 1 ){
+					B = Answer(op);
+				}
+				if( time == 0 ){
+					B = A;
+				}
+				A = 0;
+				time ++;
+			}
+			if(e.getSource() == jbtMinus ){
+				jtActionDisplay.setText(""); 
+				label.setText("-");
+				op = 2;
+				if( time == 1 ){
+					B = Answer(op);
+				}
+				if( time == 0 ){
+					B = A;
+				}
+				A = 0;
+				time ++;
+			}
+			if(e.getSource() == jbtMultiply ){
+				jtActionDisplay.setText(""); 
+				label.setText("x");
+				op = 3;
+				if( time == 1 ){
+					B = Answer(op);
+				}
+				if( time == 0 ){
+					B = A;
+				}
+				A = 0;
+				time ++;
+			}
+			if(e.getSource() == jbtDivide ){
+				jtActionDisplay.setText(""); 
+				label.setText("÷");
+				op = 4;
+				if( time == 1 ){
+					B = Answer(op);
+				}
+				if( time == 0 ){
+					B = A;
+				}
+				A = 0;
+				
+			}
+			if(e.getSource() == jbtLog ){
+				jtActionDisplay.setText(""); 
+				label.setText("");
+				B = A ;
+				A = ( Math.log(B) / Math.log(10) );
+				df.format(A);
+				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
+			}
+			if(e.getSource() == jbtLn  ){
+				jtActionDisplay.setText(""); 
+				label.setText("");
+				B = A;				
+				A = Math.log(B);
+				df.format(A);
+				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
+			}				
+			
+			if(e.getSource() == jbtSin ){	
+				jtActionDisplay.setText(""); 
+				label.setText("");
+				B = A ;
+				A = Math.sin(B);
+				df.format(A);
+				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
+			}
+			if(e.getSource() == jbtCos ){
+				jtActionDisplay.setText(""); 
+				label.setText("");
+				B = A ;
+				A = Math.cos(B);
+				df.format(A);
+				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
+			}
+			if(e.getSource() == jbtSec ){
+				jtActionDisplay.setText(""); 
+				label.setText("");
+				B = A ;
+				A = ( 1/( Math.cos(B) ));
+				df.format(A);
+				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
+			}
+			if(e.getSource() == jbtCsc ){
+				jtActionDisplay.setText(""); 
+				label.setText("");
+				B = A ;
+				A =( 1/ Math.sin(B)) ;
+				df.format(A);
+				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
+			}
+			if(e.getSource() == jbtTan ){
+				jtActionDisplay.setText(""); 
+				label.setText("");
+				B = A ;
+				A = Math.tan(B);
+				df.format(A);
+				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
+			}
+			if(e.getSource() == jbtCot ){
+				jtActionDisplay.setText(""); 
+				label.setText("");
+				B = A ;
+				A = (1 / Math.tan(B));
+				df.format(A);
+				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
+			}
+			if(e.getSource() == jbtRemainder ){
+				jtActionDisplay.setText(""); 
+				label.setText("%");
+				B = A ;
+				A = 0;
+				op = 5;
+			}
+			if(e.getSource() == jbtQuotient ){
+				jtActionDisplay.setText(""); 
+				label.setText("/");
+				B = A;
+				A = 0;
+				op = 6;
+			}
+			if(e.getSource() == jbtPi ){
+				jtActionDisplay.setText(""); 
+				label.setText("");
+				B = A;
+				A = 0;
+				A = B * PI;
+				df.format(A);
+				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
+			}
+			if(e.getSource() == jbtDecimal ){
+				jtActionDisplay.setText(jtActionDisplay.getText() + ".");	
+			}
+			if(e.getSource() == jbtDel ){
+				jtActionDisplay.setText(""); 
+				label.setText("");
+				A = 0;
+			}	
+			if(e.getSource() == jbtAnswer ){
+				label.setText("=");
+				A = Answer(op);
+				df.format(A);
+				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
+			}
+			
+		}
+		private double Answer(int op){
+			switch (op){
+				case 0: A = B; break;
+				case 1: A = B + A; time = 0; break;
+				case 2: A = B - A; time = 0; break;
+				case 3: A = B * A; time = 0;break;
+				case 4: A = B / A; time = 0; break;
+				case 5: A =  B % A; break;
+				case 6: A = (int)( B / A); break;
+			}
+			return A;
+		}
+	}
+}
