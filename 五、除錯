@@ -316,17 +316,15 @@ public class TestCalculate extends JFrame {
 			if(e.getSource() == jbtDel ){
 				jtActionDisplay.setText(""); 
 				label.setText("");
-				B = 0;
-				A = 0;
 			}	
 			if(e.getSource() == jbtAnswer ){
 				label.setText("=");
 				A = Answer(op);
 				df.format(A);
 				jtActionDisplay.setText( Double.toString(A) );
-				B = 0;
-				A = 0;
 			}
+			B = 0;
+			A = 0;
 		}
 		private double Answer(int op){
 			switch (op){
