@@ -314,6 +314,8 @@ public class TestCalculate extends JFrame {
 			if(e.getSource() == jbtDel ){
 				jtActionDisplay.setText(""); 
 				label.setText("");
+				B = 0;
+				A = 0;
 			}	
 			if(e.getSource() == jbtAnswer ){
 				label.setText("=");
