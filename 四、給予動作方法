@@ -32,6 +32,7 @@ public class TestCalculate extends JFrame {
 	private JTextField jtActionDisplay = new JTextField("");
 	
 	public TestCalculate(){
+		jtActionDisplay.setFont(new Font("Dialog", Font.BOLD, 35));
 		for(int i = 9; i >= 0; i--){
 				Number[i] = new JButton(""+ i);
 			}
@@ -51,17 +52,17 @@ public class TestCalculate extends JFrame {
 		p1.add(jbtQuotient);
 		p1.add(jbtPi);
 		p1.add(jbtDel);
-		p1.add(Number[9]);
-		p1.add(Number[8]);
 		p1.add(Number[7]);
+		p1.add(Number[8]);
+		p1.add(Number[9]);
 		p1.add(jbtAdd);
-		p1.add(Number[6]);
-		p1.add(Number[5]);
 		p1.add(Number[4]);
+		p1.add(Number[5]);
+		p1.add(Number[6]);
 		p1.add(jbtMinus);
-		p1.add(Number[3]);
-		p1.add(Number[2]);
 		p1.add(Number[1]);
+		p1.add(Number[2]);
+		p1.add(Number[3]);
 		p1.add(jbtMultiply);
 		p1.add(Number[0]);
 		p1.add(jbtDecimal);
