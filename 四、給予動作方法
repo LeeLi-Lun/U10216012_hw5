@@ -30,10 +30,15 @@ public class TestCalculate extends JFrame {
 	private JButton[] Number = new JButton[10]; //for 0~9 button
 	
 	private JTextField jtActionDisplay = new JTextField(12);
-	private String[] input = String[257];
+	long A = 0L;
+	long B = 0L;
+	int op =0;
+	int time = 0;
 	
 	public TestCalculate(){
+		DecimalFormat df = new DecimalFormat("################.################"); 
 		jtActionDisplay.setFont(new Font("Dialog", Font.BOLD, 35));
+		
 		for(int i = 9; i >= 0; i--){
 				Number[i] = new JButton(""+ i);
 			}
@@ -115,185 +120,206 @@ public class TestCalculate extends JFrame {
 		public void actionPerformed(ActionEvent e){		
 			if(e.getSource() == Number[0] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "0");
-				getAnswer("0");
+				A = Long.parseLong(jtActionDisplay.getText());
 			}
 			if(e.getSource() == Number[1] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "1"); 
-				getAnswer("1");
+				A = Long.parseLong(jtActionDisplay.getText());
 			}
 			if(e.getSource() == Number[2] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "2"); 
-				getAnswer("2");
+				A = Long.parseLong(jtActionDisplay.getText());
 			}
 			if(e.getSource() == Number[3] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "3"); 
-				getAnswer("3");
+				A = Long.parseLong(jtActionDisplay.getText());
 			}
 			if(e.getSource() == Number[4] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "4"); 
-				getAnswer("4");
+				A = Long.parseLong(jtActionDisplay.getText());
 			}
 			if(e.getSource() == Number[5] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "5");
-				getAnswer("5");
+				A = Long.parseLong(jtActionDisplay.getText());
 			}
 			if(e.getSource() == Number[6] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "6"); 
-				getAnswer("6");
+				A = Long.parseLong(jtActionDisplay.getText());
 			}
 			if(e.getSource() == Number[7] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "7"); 
-				getAnswer("7");
+				A = Long.parseLong(jtActionDisplay.getText());
 			}
 			if(e.getSource() == Number[8] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "8"); 
-				getAnswer("8");
+				A = Long.parseLong(jtActionDisplay.getText());
 			}
 			if(e.getSource() == Number[9] ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "9"); 
-				getAnswer("9");
+				A = Long.parseLong(jtActionDisplay.getText());
 			}
-			if(e.getSource() == jbtDecimal ){
-				jtActionDisplay.setText(jtActionDisplay.getText() + ".");	
-				getAnswer("Decimal");
-			}
-	//		if(e.getSource() == jbtAnswer ){
-	//			jtActionDisplay.setText( String.format("%.16f",getAnswer()) );
-	//		}
+			
 			if(e.getSource() == jbtAdd  ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "+"); 
-				getAnswer("Add");
+				op = 1;
+				if( time >= 2 ){
+					B = Answer(op);
+				}
+				if( time <= 1 ){
+					B = A;
+				}
+				A = 0L;
+				time ++;
 			}
 			if(e.getSource() == jbtMinus ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "-"); 
-				getAnswer("Minus");
+				op = 2;
+				if( time >= 2 ){
+					B = Answer(op);
+				}
+				if( time <= 1 ){
+					B = A;
+				}
+				A = 0L;
+				time ++;
 			}
 			if(e.getSource() == jbtMultiply ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "x"); 
-				getAnswer("Multiply");
+				op = 3;
+				if( time >= 2 ){
+					B = Answer(op);
+				}
+				if( time <= 1 ){
+					B = A;
+				}
+				A = 0L;
+				time ++;
 			}
 			if(e.getSource() == jbtDivide ){
-				jtActionDisplay.setText(jtActionDisplay.getText() + "÷");
-				getAnswer("Divide");
+				jtActionDisplay.setText(jtActionDisplay.getText() + "÷"); 
+				op = 4;
+				if( time >= 2 ){
+					B = Answer(op);
+				}
+				if( time <= 1 ){
+					B = A;
+				}
+				A = 0L;
+				time ++;
 			}
 			if(e.getSource() == jbtLog ){
 				jtActionDisplay.setText("log" + jtActionDisplay.getText()); 
-				getAnswer("Log");
+				B = A ;
+				A = ( Math.log(B) / Math.log(10) );
+				df.format(A);
+				jtActionDisplay.setText( Long.toString(A) );
 			}
 			if(e.getSource() == jbtLn  ){
 				jtActionDisplay.setText(jtActionDisplay.getText());
-				getAnswer("Ln");
+				B = A;
+				A = 0L;
+				A = Math.log(B);
+				df.format(A);
+				jtActionDisplay.setText( Long.toString(A) );
 			}				
-			if(e.getSource() == jbtDel ){
-				jtActionDisplay.setText(""); 
-				getAnswer("Del");
-			}	
-			if(e.getSource() == jbtPi ){
-				jtActionDisplay.setText(jtActionDisplay.getText() + "π");
-				getAnswer("Pi");
-			}
+			
 			if(e.getSource() == jbtSin ){	
 				jtActionDisplay.setText("sin" + jtActionDisplay.getText() ); 
-				getAnswer("Sin");
+				B = A ;
+				A = 0L;
+				A = Math.sin(B);
+				df.format(A);
+				jtActionDisplay.setText( Long.toString(A) );
 			}
 			if(e.getSource() == jbtCos ){
 				jtActionDisplay.setText("cos" + jtActionDisplay.getText() ); 
-				getAnswer("Cos");
+				B = A ;
+				A = 0L;
+				A = Math.cos(B);
+				df.format(A);
+				jtActionDisplay.setText( Long.toString(A) );
 			}
 			if(e.getSource() == jbtSec ){
 				jtActionDisplay.setText("sec" + jtActionDisplay.getText() ); 
-				getAnswer("Sec");
+				B = A ;
+				A = 0L;
+				A = Math.sec(B);
+				df.format(A);
+				jtActionDisplay.setText( Long.toString(A) );
 			}
 			if(e.getSource() == jbtCsc ){
 				jtActionDisplay.setText("csc" + jtActionDisplay.getText() );
-				getAnswer("Csc");
+				B = A ;
+				A = 0L;
+				A = Math.csc(B) ;
+				df.format(A);
+				jtActionDisplay.setText( Long.toString(A) );
 			}
 			if(e.getSource() == jbtTan ){
 				jtActionDisplay.setText("tan" + jtActionDisplay.getText() ); 
-				getAnswer("Tan");
+				B = A ;
+				A = 0L;
+				A = Math.tan(B);
+				df.format(A);
+				jtActionDisplay.setText( Long.toString(A) );
 			}
 			if(e.getSource() == jbtCot ){
 				jtActionDisplay.setText("cot" + jtActionDisplay.getText() );
-				getAnswer("Cot");
+				B = A ;
+				A = 0L;
+				A = Math.cot(B);
+				df.format(A);
+				jtActionDisplay.setText( Long.toString(A) );
 			}
 			if(e.getSource() == jbtRemainder ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "%"  );
-				getAnswer("Remainder");
+				B = A;
+				A = 0L;
+				op = 5;
 			}
 			if(e.getSource() == jbtQuotient ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + "/" );
-				getAnswer("Quotient");
+				B = A;
+				A = 0L;
+				op = 6;
 			}
-		
-		}
-		
-		private double getAnswer(){
-			
-			return answer;
-		}
-		
-		private void getAnswer(String number){
-			if(number == "0"||number == "1"
-			||number == "2"||number == "3"
-			||number == "4"||number == "5"
-			||number == "6"||number == "7"
-			||number == "8"||number == "9" ){
-				for (int j = 1; j < 257; j++){
-				input[j] = number;
-				}
+			if(e.getSource() == jbtPi ){
+				jtActionDisplay.setText(jtActionDisplay.getText() + "π");
+				B = A;
+				A = 0L;
+				A = B * 3.141592653589793
+				df.format(A);
+				jtActionDisplay.setText( Long.toString(A) );
 			}
-			if(number == "Decimal" ){
+			if(e.getSource() == jbtDecimal ){
+				jtActionDisplay.setText(jtActionDisplay.getText() + ".");	
+				B = A;
+				A = 0L;
 				
 			}
-			if(number == "Add"  ){
-				
-			}
-			if(number == "Minus" ){
-				
-			}
-			if(number == "Multiply" ){
-			
-			}
-			if(number == "Divide" ){
-				
-			}
-			if(number == "Log"){
-				
-			}
-			if(number == "Ln" ){
-				
-			}				
-			if(number == "Del" ){
-				
+			if(e.getSource() == jbtDel ){
+				jtActionDisplay.setText(""); 
 			}	
-			if(number == "Pi" ){
+			if(e.getSource() == jbtAnswer ){
 				
+				A = Answer(op);
+				df.format(A);
+				jtActionDisplay.setText( Long.toString(A) );
 			}
-			if(number == "Sin" ){	
-				
+		}
+		private void Decimal(long B, long A){}
+		
+		private void Answer(int op){
+			switch (op){
+				case 0: A = B; break;
+				case 1: A = B + A; time = 0; break;
+				case 2: A = B - A; time = 0; break;
+				case 3: A = B * A; time = 0;break;
+				case 4: A = B / A; time = 0; break;
+				case 5: A =  B % A; break;
+				case 6: A = (int)( B / A); break;
 			}
-			if(number == "Cos" ){
-			
-			}
-			if(number == "Sec" ){
-				
-			}
-			if(number == "Csc" ){
-				
-			}
-			if(number == "Tan" ){
-				
-			}
-			if(number == "Cot" ){
-				
-			}
-			if(number == "Remainder" ){
-				
-			}
-			if(number == "Quotient" ){
-			
-			}
-			
+			return A;
 		}
 	}
 	
