@@ -28,9 +28,11 @@ public class TestCalculate extends JFrame {
 	private JButton jbtRemainder = new JButton("%");
 	private JButton jbtQuotient = new JButton("/");
 	
-	private JButton[] Number = new JButton[10]; //for 0~9 button
+	private JButton[] Number = new JButton[10]; //for 0~9 button	
 	private JLabel label = new JLabel("");
 	private JTextField jtActionDisplay = new JTextField(15);
+	
+	public static final double PI = 3.141592653589793;
 	double A = 0;
 	double B = 0;
 	int op =0;
@@ -243,7 +245,7 @@ public class TestCalculate extends JFrame {
 			if(e.getSource() == jbtCos ){
 				jtActionDisplay.setText(""); 
 				label.setText("");
-				B = A ;
+				B = A  ;
 				A = 0;
 				A = Math.cos(B);
 				df.format(A);
@@ -252,7 +254,7 @@ public class TestCalculate extends JFrame {
 			if(e.getSource() == jbtSec ){
 				jtActionDisplay.setText(""); 
 				label.setText("");
-				B = A ;
+				B = A  ;
 				A = 0;
 				A = ( 1/( Math.cos(B) ));
 				df.format(A);
@@ -261,7 +263,7 @@ public class TestCalculate extends JFrame {
 			if(e.getSource() == jbtCsc ){
 				jtActionDisplay.setText(""); 
 				label.setText("");
-				B = A ;
+				B = A  ;
 				A = 0;
 				A =( 1/ Math.sin(B)) ;
 				df.format(A);
@@ -279,7 +281,7 @@ public class TestCalculate extends JFrame {
 			if(e.getSource() == jbtCot ){
 				jtActionDisplay.setText(""); 
 				label.setText("");
-				B = A ;
+				B = A  ;
 				A = 0;
 				A = (1 / Math.tan(B));
 				df.format(A);
@@ -288,7 +290,7 @@ public class TestCalculate extends JFrame {
 			if(e.getSource() == jbtRemainder ){
 				jtActionDisplay.setText(""); 
 				label.setText("%");
-				B = A;
+				B = A ;
 				A = 0;
 				op = 5;
 			}
@@ -304,7 +306,7 @@ public class TestCalculate extends JFrame {
 				label.setText("");
 				B = A;
 				A = 0;
-				A = B * 3.141592653589793;
+				A = B * PI;
 				df.format(A);
 				jtActionDisplay.setText( Double.toString(A) );
 			}
