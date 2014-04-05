@@ -29,7 +29,7 @@ public class TestCalculate extends JFrame {
 	
 	private JButton[] Number = new JButton[10]; //for 0~9 button
 	
-	private JTextField jtActionDisplay = new JTextField("");
+	private JTextField jtActionDisplay = new JTextField(12);
 	
 	public TestCalculate(){
 		jtActionDisplay.setFont(new Font("Dialog", Font.BOLD, 35));
@@ -136,8 +136,9 @@ public class TestCalculate extends JFrame {
 				jtActionDisplay.setText(jtActionDisplay.getText() + "9"); 
 			if(e.getSource() == jbtDecimal )
 				jtActionDisplay.setText(jtActionDisplay.getText() + ".");	
-			if(e.getSource() == jbtAnswer )
-				jtActionDisplay.setText( String.format("%.16f",getAnswer()) );
+	//		if(e.getSource() == jbtAnswer ){
+	//			jtActionDisplay.setText( String.format("%.16f",getAnswer()) );
+	//		}
 			if(e.getSource() == jbtAdd  )
 				jtActionDisplay.setText(jtActionDisplay.getText() + "+"); 
 			if(e.getSource() == jbtMinus )
@@ -150,8 +151,8 @@ public class TestCalculate extends JFrame {
 				jtActionDisplay.setText("log" + jtActionDisplay.getText()); 
 			if(e.getSource() == jbtLn  )
 				jtActionDisplay.setText(jtActionDisplay.getText()); 
-			if(e.getSource() == jbtDel )
-				jtActionDisplay.setText(""); 
+	//		if(e.getSource() == jbtDel )
+	//			jtActionDisplay.setText(""); 
 			if(e.getSource() == jbtPi )
 				jtActionDisplay.setText(jtActionDisplay.getText() + "π");
 			if(e.getSource() == jbtSin )	
@@ -181,7 +182,7 @@ public class TestCalculate extends JFrame {
 	
 	public static void main( String[] args ){
 		TestCalculate frame = new TestCalculate();
-		frame.setSize(400,400);
+		frame.setSize(400,300);
 		frame.setTitle(" 小算盤");
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
