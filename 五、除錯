@@ -3,7 +3,8 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.text.DecimalFormat;
 
-public class TestCalculate extends JFrame {
+
+class TestCalculate extends JFrame {
 	
 	private JButton jbtDecimal= new JButton(".");
 	private JButton jbtAnswer = new JButton("=");
@@ -114,6 +115,8 @@ public class TestCalculate extends JFrame {
 		jbtCot.addActionListener(Action);
 		jbtRemainder.addActionListener(Action);
 		jbtQuotient.addActionListener(Action);
+		
+		
 	}
 	
 
@@ -167,7 +170,7 @@ public class TestCalculate extends JFrame {
 				jtActionDisplay.setText(""); 
 				label.setText("+");
 				op = 1;
-				if( time == 1 ){
+				if( time >= 1 ){
 					B = Answer(op);
 				}
 				if( time == 0 ){
@@ -180,7 +183,7 @@ public class TestCalculate extends JFrame {
 				jtActionDisplay.setText(""); 
 				label.setText("-");
 				op = 2;
-				if( time == 1 ){
+				if( time >= 1 ){
 					B = Answer(op);
 				}
 				if( time == 0 ){
@@ -193,7 +196,7 @@ public class TestCalculate extends JFrame {
 				jtActionDisplay.setText(""); 
 				label.setText("x");
 				op = 3;
-				if( time == 1 ){
+				if( time >= 1 ){
 					B = Answer(op);
 				}
 				if( time == 0 ){
@@ -206,7 +209,7 @@ public class TestCalculate extends JFrame {
 				jtActionDisplay.setText(""); 
 				label.setText("÷");
 				op = 4;
-				if( time == 1 ){
+				if( time >= 1 ){
 					B = Answer(op);
 				}
 				if( time == 0 ){
@@ -342,17 +345,4 @@ public class TestCalculate extends JFrame {
 			return A;
 		}
 	}
-	
-	public static void main( String[] args ){
-		TestCalculate frame = new TestCalculate();
-		frame.setSize(400,300);
-		frame.setTitle(" 小算盤");
-		frame.setLocationRelativeTo(null);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(true);
-	}
-	
-
-	
-	
 }
