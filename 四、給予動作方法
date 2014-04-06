@@ -3,7 +3,8 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.text.DecimalFormat;
 
-public class TestCalculate extends JFrame {
+
+class TestCalculate extends JFrame {
 	
 	private JButton jbtDecimal= new JButton(".");
 	private JButton jbtAnswer = new JButton("=");
@@ -28,16 +29,19 @@ public class TestCalculate extends JFrame {
 	private JButton jbtRemainder = new JButton("%");
 	private JButton jbtQuotient = new JButton("/");
 	
-	private JButton[] Number = new JButton[10]; //for 0~9 button
+	private JButton[] Number = new JButton[10]; //for 0~9 button	
+	private JLabel label = new JLabel("");
+	private JTextField jtActionDisplay = new JTextField(15);
 	
-	private JTextField jtActionDisplay = new JTextField(10);
+	public static final double PI = 3.141592653589793;
 	double A = 0;
 	double B = 0;
 	int op =0;
 	int time = 0;
 	
 	public TestCalculate(){
-		jtActionDisplay.setFont(new Font("Dialog", Font.BOLD, 30)); 
+		jtActionDisplay.setFont(new Font("Dialog", Font.BOLD, 25)); 
+		label.setFont(new Font("Dialog", Font.BOLD, 15));
 		for(int i = 9; i >= 0; i--){
 				Number[i] = new JButton(""+ i);
 			}
@@ -75,7 +79,8 @@ public class TestCalculate extends JFrame {
 		p1.add(jbtDivide);
 		
 		JPanel p2 = new JPanel();
-		p2.add(jtActionDisplay);
+		p2.add(label);
+		p2.add(jtActionDisplay,BorderLayout.SOUTH);
 		
 		add(p2, BorderLayout.NORTH );
 		add(p1, BorderLayout.CENTER );
@@ -110,6 +115,8 @@ public class TestCalculate extends JFrame {
 		jbtCot.addActionListener(Action);
 		jbtRemainder.addActionListener(Action);
 		jbtQuotient.addActionListener(Action);
+		
+		
 	}
 	
 
@@ -160,148 +167,170 @@ public class TestCalculate extends JFrame {
 			}
 			
 			if(e.getSource() == jbtAdd  ){
-				jtActionDisplay.setText(jtActionDisplay.getText() + "+"); 
+				jtActionDisplay.setText(""); 
+				label.setText("+");
 				op = 1;
-				if( time >= 2 ){
+				if( time >= 1 ){
 					B = Answer(op);
 				}
-				if( time <= 1 ){
+				if( time == 0 ){
 					B = A;
 				}
 				A = 0;
 				time ++;
 			}
 			if(e.getSource() == jbtMinus ){
-				jtActionDisplay.setText(jtActionDisplay.getText() + "-"); 
+				jtActionDisplay.setText(""); 
+				label.setText("-");
 				op = 2;
-				if( time >= 2 ){
+				if( time >= 1 ){
 					B = Answer(op);
 				}
-				if( time <= 1 ){
+				if( time == 0 ){
 					B = A;
 				}
 				A = 0;
 				time ++;
 			}
 			if(e.getSource() == jbtMultiply ){
-				jtActionDisplay.setText(jtActionDisplay.getText() + "x"); 
+				jtActionDisplay.setText(""); 
+				label.setText("x");
 				op = 3;
-				if( time >= 2 ){
+				if( time >= 1 ){
 					B = Answer(op);
 				}
-				if( time <= 1 ){
+				if( time == 0 ){
 					B = A;
 				}
 				A = 0;
 				time ++;
 			}
 			if(e.getSource() == jbtDivide ){
-				jtActionDisplay.setText(jtActionDisplay.getText() + "÷"); 
+				jtActionDisplay.setText(""); 
+				label.setText("÷");
 				op = 4;
-				if( time >= 2 ){
+				if( time >= 1 ){
 					B = Answer(op);
 				}
-				if( time <= 1 ){
+				if( time == 0 ){
 					B = A;
 				}
 				A = 0;
-				time ++;
+				
 			}
 			if(e.getSource() == jbtLog ){
-				jtActionDisplay.setText("log" + jtActionDisplay.getText()); 
+				jtActionDisplay.setText(""); 
+				label.setText("");
 				B = A ;
 				A = ( Math.log(B) / Math.log(10) );
 				df.format(A);
 				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
 			}
 			if(e.getSource() == jbtLn  ){
-				jtActionDisplay.setText(jtActionDisplay.getText());
-				B = A;
-				A = 0;
+				jtActionDisplay.setText(""); 
+				label.setText("");
+				B = A;				
 				A = Math.log(B);
 				df.format(A);
 				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
 			}				
 			
 			if(e.getSource() == jbtSin ){	
-				jtActionDisplay.setText("sin" + jtActionDisplay.getText() ); 
+				jtActionDisplay.setText(""); 
+				label.setText("");
 				B = A ;
-				A = 0;
 				A = Math.sin(B);
 				df.format(A);
 				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
 			}
 			if(e.getSource() == jbtCos ){
-				jtActionDisplay.setText("cos" + jtActionDisplay.getText() ); 
+				jtActionDisplay.setText(""); 
+				label.setText("");
 				B = A ;
-				A = 0;
 				A = Math.cos(B);
 				df.format(A);
 				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
 			}
 			if(e.getSource() == jbtSec ){
-				jtActionDisplay.setText("sec" + jtActionDisplay.getText() ); 
+				jtActionDisplay.setText(""); 
+				label.setText("");
 				B = A ;
-				A = 0;
-				A = ( 1 / Math.cos(B));
+				A = ( 1/( Math.cos(B) ));
 				df.format(A);
 				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
 			}
 			if(e.getSource() == jbtCsc ){
-				jtActionDisplay.setText("csc" + jtActionDisplay.getText() );
+				jtActionDisplay.setText(""); 
+				label.setText("");
 				B = A ;
-				A = 0;
 				A =( 1/ Math.sin(B)) ;
 				df.format(A);
 				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
 			}
 			if(e.getSource() == jbtTan ){
-				jtActionDisplay.setText("tan" + jtActionDisplay.getText() ); 
+				jtActionDisplay.setText(""); 
+				label.setText("");
 				B = A ;
-				A = 0;
 				A = Math.tan(B);
 				df.format(A);
 				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
 			}
 			if(e.getSource() == jbtCot ){
-				jtActionDisplay.setText("cot" + jtActionDisplay.getText() );
+				jtActionDisplay.setText(""); 
+				label.setText("");
 				B = A ;
-				A = 0;
 				A = (1 / Math.tan(B));
 				df.format(A);
 				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
 			}
 			if(e.getSource() == jbtRemainder ){
-				jtActionDisplay.setText(jtActionDisplay.getText() + "%"  );
-				B = A;
+				jtActionDisplay.setText(""); 
+				label.setText("%");
+				B = A ;
 				A = 0;
 				op = 5;
 			}
 			if(e.getSource() == jbtQuotient ){
-				jtActionDisplay.setText(jtActionDisplay.getText() + "/" );
+				jtActionDisplay.setText(""); 
+				label.setText("/");
 				B = A;
 				A = 0;
 				op = 6;
 			}
 			if(e.getSource() == jbtPi ){
-				jtActionDisplay.setText(jtActionDisplay.getText() + "π");
+				jtActionDisplay.setText(""); 
+				label.setText("");
 				B = A;
 				A = 0;
-				A = B * 3.141592653589793;
+				A = B * PI;
 				df.format(A);
 				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
 			}
 			if(e.getSource() == jbtDecimal ){
 				jtActionDisplay.setText(jtActionDisplay.getText() + ".");	
 			}
 			if(e.getSource() == jbtDel ){
 				jtActionDisplay.setText(""); 
+				label.setText("");
+				A = 0;
 			}	
 			if(e.getSource() == jbtAnswer ){
+				label.setText("=");
 				A = Answer(op);
 				df.format(A);
 				jtActionDisplay.setText( Double.toString(A) );
+				A = 0;
 			}
+			
 		}
 		private double Answer(int op){
 			switch (op){
@@ -316,17 +345,4 @@ public class TestCalculate extends JFrame {
 			return A;
 		}
 	}
-	
-	public static void main( String[] args ){
-		TestCalculate frame = new TestCalculate();
-		frame.setSize(400,300);
-		frame.setTitle(" 小算盤");
-		frame.setLocationRelativeTo(null);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(true);
-	}
-	
-
-	
-	
 }
