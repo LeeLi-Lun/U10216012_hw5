@@ -5,14 +5,14 @@
  * Information: The user can enter password "0000" to enter the GUI of calculate . 
  *				The calculate has twenty and eight button and a Text Field 
  *				GUI: 
- *							TextField
- *						sin  cos   sec  log
- *						csc  tan   cot  ln
- *						 %    /     π   del
- *						 7	  8     9    +
- *						 4    5     6    -
- *					     1    2     3    x    	
- *					     0    .     =    ÷	
+ *				            TextField
+ *					sin  cos   sec  log
+ *					csc  tan   cot  ln
+ *					%    /     π   del
+ *					7    8     9    +
+ *					4    5     6    -
+ *					1    2     3    x    	
+ *					0    .     =    ÷	
  *
  *						
  */ 
