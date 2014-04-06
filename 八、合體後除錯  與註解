@@ -5,14 +5,14 @@
  * Information: The user can enter password "0000" to enter the GUI of calculate . 
  *				The calculate has twenty and eight button and a Text Field 
  *				GUI: 
- *				            TextField
+ *					    TextField
  *					sin  cos   sec  log
  *					csc  tan   cot  ln
- *					%    /     π   del
- *					7    8     9    +
- *					4    5     6    -
- *					1    2     3    x    	
- *					0    .     =    ÷	
+ *					 %    /     π   del
+ *					 7    8     9    +
+ *					 4    5     6    -
+ *					 1    2     3    x    	
+ *					 0    .     =    ÷	
  *
  *						
  */ 
@@ -27,34 +27,39 @@ public class GUIPassword extends JFrame {
  private JPasswordField password = new JPasswordField();  // the password field
  private JButton signinButton = new JButton("登入");   
  private JButton cancelButton = new JButton("退出");  // the "登入" and "退出" button
-	//
+	//no-arg constructor
 	public GUIPassword() { 
-		
+		// add the four components in the frame1.
 		add(lab1);   
 		add(password); 
 		add(signinButton);
 		add(cancelButton);  
 		
-		setLayout(new GridLayout(2, 2, 2, 2)); 
+		setLayout(new GridLayout(2, 2, 2, 2)); //set the Layout method of frame1.
   
-		ButtonListener Action = new ButtonListener();
-		signinButton.addActionListener(Action);
+		ButtonListener Action = new ButtonListener(); //Register listener to the two buttons
+		signinButton.addActionListener(Action);		 
 		cancelButton.addActionListener(Action);
 	}	
 	
+	/**Handle two buttons*/
 	private class ButtonListener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e){
 			String pw = String.valueOf( password.getPassword() ); 	
 			
-			if(e.getSource() == signinButton ){
-				String Cpw = "0000";
-				if( ! pw.equals(Cpw) ){
-					lab1.setText("密碼錯誤，請重新輸入");
+			if(e.getSource() == signinButton ){ // judge the source form sininButton
+				String Cpw = "0000";  //set the correct password is 0000
+				
+				if( ! pw.equals(Cpw) ){	//the user entering password isn't correct
+					lab1.setText("密碼錯誤，請重新輸入"); 
 				}
-				if(  pw.equals(Cpw) ){
-					setVisible(false);
-					TestCalculate frame2 = new TestCalculate();
+				
+				if(  pw.equals(Cpw) ){ //the user entering password is correct
+					
+					setVisible(false);  // hide the frame1.
+					
+					TestCalculate frame2 = new TestCalculate(); //call the frame2
 					frame2.setSize(400,300);
 					frame2.setTitle(" 小算盤");
 					frame2.setLocationRelativeTo(null);
@@ -64,7 +69,7 @@ public class GUIPassword extends JFrame {
 				}
 			}
 				
-			if(e.getSource() == cancelButton ){
+			if(e.getSource() == cancelButton ){  // judge the source form cancelButton
 				System.exit(0);  // exit GUI
 			}
 		}
@@ -81,12 +86,13 @@ public class GUIPassword extends JFrame {
 	}
 }
 
+/**the Calculate class*/
 class TestCalculate extends JFrame {
+	// set the twenty and eight buttons 
+	private JButton jbtDecimal= new JButton(".");  
+	private JButton jbtAnswer = new JButton("=")
 	
-	private JButton jbtDecimal= new JButton(".");
-	private JButton jbtAnswer = new JButton("=");
-	
-	private JButton jbtAdd = new JButton("+");
+	private JButton jbtAdd = new JButton("+");	
 	private JButton jbtMinus = new JButton("-");
 	private JButton jbtMultiply = new JButton("x");
 	private JButton jbtDivide = new JButton("÷");
@@ -103,29 +109,31 @@ class TestCalculate extends JFrame {
 	private JButton jbtDel = new JButton("del");
 	private JButton jbtPi = new JButton("π");
 	
-	private JButton jbtRemainder = new JButton("%");
-	private JButton jbtQuotient = new JButton("/");
+	private JButton jbtRemainder = new JButton("%");  //Remainder button
+	private JButton jbtQuotient = new JButton("/");  //Quotient button
 	
 	private JButton[] Number = new JButton[10]; //for 0~9 button	
-	private JLabel label = new JLabel("");
-	private JTextField jtActionDisplay = new JTextField(15);
+	private JLabel label = new JLabel("");  // to show the operator situation
+	private JTextField jtActionDisplay = new JTextField(15); // set the text field and set the long is 15
 	
-	public static final double PI = 3.141592653589793;
-	double A = 0;
-	double B = 0;
-	int op =0;
-	int time = 0;
+	public static final double PI = 3.141592653589793;  // set the PI
+	double A = 0;  // save the user entering number
+	double B = 0; // save the A value
+	int op =0;  //operator situation
+	int time = 0;  // judge the  even operator
 	
 	public TestCalculate(){
-		jtActionDisplay.setFont(new Font("Dialog", Font.BOLD, 25)); 
-		label.setFont(new Font("Dialog", Font.BOLD, 15));
-		for(int i = 9; i >= 0; i--){
+		jtActionDisplay.setFont(new Font("Dialog", Font.BOLD, 25));  //set the font of the word and the size of it
+		label.setFont(new Font("Dialog", Font.BOLD, 15));   // set the font of the label and the size of it
+		for(int i = 9; i >= 0; i--){   // use the array to create 0~9 buttons
 				Number[i] = new JButton(""+ i);
 			}
 			
-		JPanel p1 = new JPanel();
-		p1.setLayout(new GridLayout(7,4,2,2));
-	
+		JPanel p1 = new JPanel();  //create the p1 panel
+		p1.setLayout(new GridLayout(7,4,2,2));  //set the Layout method of p1.
+		
+		// add the button to the p1
+		// the  order isn't to change, it is important
 		p1.add(jbtSin);
 		p1.add(jbtCos);
 		p1.add(jbtSec);
@@ -155,14 +163,16 @@ class TestCalculate extends JFrame {
 		p1.add(jbtAnswer);
 		p1.add(jbtDivide);
 		
-		JPanel p2 = new JPanel();
-		p2.add(label);
+		JPanel p2 = new JPanel(); //create the p2 panel
+		// add the label and text field to the p2
+		p2.add(label);		
 		p2.add(jtActionDisplay,BorderLayout.SOUTH);
 		
+		// add  p1 and p2 to frame2
 		add(p2, BorderLayout.NORTH );
 		add(p1, BorderLayout.CENTER );
 		
-		ButtonListener Action = new ButtonListener();
+		ButtonListener Action = new ButtonListener(); //Register listener to buttons
 
 		Number[0].addActionListener(Action);
 		Number[1].addActionListener(Action);
@@ -197,13 +207,14 @@ class TestCalculate extends JFrame {
 	}
 	
 
-	
+	/**Handle buttons*/
 	private class ButtonListener implements ActionListener{
-		DecimalFormat df = new DecimalFormat("################.################"); 
+		DecimalFormat df = new DecimalFormat("################.################");  // set the long of the word 
 		@Override
 		public void actionPerformed(ActionEvent e){		
+			
 			if(e.getSource() == Number[0] ){
-				jtActionDisplay.setText(jtActionDisplay.getText() + "0");
+				jtActionDisplay.setText(jtActionDisplay.getText() + "0"); 
 				A = Double.parseDouble(jtActionDisplay.getText());
 			}
 			if(e.getSource() == Number[1] ){
@@ -409,9 +420,10 @@ class TestCalculate extends JFrame {
 			}
 			
 		}
+		//the Answer method 
 		private double Answer(int op){
 			switch (op){
-				case 0: A = B; break;
+				case 0: A = B; break; 
 				case 1: A = B + A; time = 0; break;
 				case 2: A = B - A; time = 0; break;
 				case 3: A = B * A; time = 0;break;
